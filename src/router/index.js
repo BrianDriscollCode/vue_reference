@@ -1,20 +1,51 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    components: {
+      NavBar: () => import('@/components/NavBar.vue'),
+      default: () => import('@/views/HomeView.vue'),
+    }
   },
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+    components: {
+      NavBar: () => import('@/components/NavBar.vue'),
+      default: () => import('@/views/AboutView.vue'),
+    }
+  },
+  {
+    path: '/documentation',
+    name: 'documentation',
+    components: {
+      default: () => import('@/views/DocumentationView.vue'),
+      LeftSideBar: () => import('@/components/LeftSideBar.vue'),
+      TopBar: () => import('@/components/TopBar.vue'),
+    }
+  },
+  //********** Documentation Subjects **********
+  {
+    path: '/documentation/rendering-lists',
+    name: 'RenderingLists',
+    components: {
+      default: () => import('@/views/subjects/RenderingListsLesson.vue'),
+      LeftSideBar: () => import('@/components/LeftSideBar.vue'),
+      TopBar: () => import('@/components/TopBar.vue'),
+    }
+  },
+  //********** Components **********
+  {
+    path: '/documentation/components/banner-example',
+    name: 'BannerComponentExample',
+    components: {
+      default: () => import('@/views/componentExamples/BannerExample.vue'),
+      LeftSideBar: () => import('@/components/LeftSideBar.vue'),
+      TopBar: () => import('@/components/TopBar.vue'),
+    }
+  },
 ]
 
 const router = createRouter({
