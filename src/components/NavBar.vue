@@ -78,6 +78,7 @@ export default {
 #docsButton:hover {
     transition: background-color 0.1s;
     background-color: #F29602;
+    text-shadow: 1px 0px 2px rgba(150, 150, 150, 0.34);
 }
 
 h2 {

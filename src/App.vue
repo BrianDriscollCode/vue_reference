@@ -1,5 +1,7 @@
 <template>
-  <div class="MainParentElement" :style="{ flexDirection: isDocumentation }">
+  <!-- **Future Change 1A: isDocumentation is too abstract  -->
+  <!-- **refer to the next "1A" entry for future task description -->
+  <div class="MainParentElement" :style="{ flexDirection: isDocumentation }"> 
 
     <!-- These are repositioned based and routed based on  -->
     <div class="SecondaryNavigationElement" :style="{ width: navigationLength }">
@@ -20,6 +22,9 @@
   export default {
     data() {
       return {
+        // **Future Change 1A: Think about make isDocumentation boolean
+        // **and then adding a better descriptor variable
+        // **for flexDirection ("row" || "column")
         isDocumentation: this.isPageDocumentation(true, true),
         navigationLength: "18%",
         contentWidth: "100%"
@@ -63,15 +68,18 @@
 
 html {
   height: 100%;
+  --vt-font-family-base: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --vt-font-family-mono: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 body{
   height: 100%;
   margin: 0;
+  font-family: var(--vt-font-family-base);
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Avenir, Helvetica, Arial, sans-serif; */
   height: 100%;
 }
 

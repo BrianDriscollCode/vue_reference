@@ -25,10 +25,10 @@ export default {
     },
     reformObjectCreate() {
       Object.create = function(o) {
-            var F = function() {}
-            F.prototype = o
-            return new F()
-        }
+        var F = function() {}
+        F.prototype = o
+        return new F()
+      }
 
     },
   },
