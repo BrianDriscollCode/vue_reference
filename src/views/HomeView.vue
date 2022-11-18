@@ -15,39 +15,24 @@
     </div>  
   </div>
 
-  <div class="contentPreview">
-    <h3> Latest Vue Content </h3>
+  <ContentPreview />
+  <FooterBasic />
 
-    <div class="articles">
-      <div class="singleArticle article1">
-        <div class="bannerImage article1Image"> 
-          <p class="imageText"> BANNERS </p>
-          <div class="opaqueBackground">
-          </div>
-        </div>
-        <h4> How to Make a Banner </h4>
-      </div>
-
-      <div class="singleArticle article2">
-        <div class="bannerImage article2Image"> </div>
-        <h4> How to Make a Banner </h4>
-      </div>
-
-      <div class="singleArticle article3">
-        <div class="bannerImage article3Image"> </div>
-        <h4> How to Make a Banner </h4>
-      </div>
-    </div>
-  </div>
 </template>
 
 <script>
 
-import vue_image from "@/assets/vue_background.jpg";
+import vue_image from "@/assets/vue_background.jpg"
+import ContentPreview from "@/components/ContentPreview"
+import FooterBasic from "@/components/FooterBasic"
 
 export default {
 
   name: 'HomeView',
+  components: {
+    ContentPreview,
+    FooterBasic
+  },
   data() {
     return {
       image: vue_image,
@@ -146,76 +131,6 @@ button, input[type="submit"], input[type="reset"] {
   background-color: #F29602;
   transition: color 0.1s;
   color: rgb(215, 215, 215);
-}
-
-/* Content Preview Section */
-
-.contentPreview {
-
-}
-
-.contentPreview h3 {
-  font-size: 2.2em;
-  text-align: center;
-}
-
-.articles {
-  width: 80%;
-  margin: 0 auto 0 auto;
-  display: flex;
-  flex-direction: row;
-}
-
-.singleArticle {
-  margin: 1.25em;
-  width: 33.33%;
-  background-color: aquamarine;
-}
-
-.bannerImage {
-  height: 300px;
-}
-
-.article1Image {
-  background: linear-gradient(
-    to bottom,
-    rgba(127, 127, 127, 0.404),
-    #c7c79234
-  ), url('@/assets/banner_image_1280x720.jpg');
-  background-size: cover;
-}
-
-.article2Image {
-  background: linear-gradient(
-    to bottom,
-    rgba(127, 127, 127, 0.404),
-    #c7c79234
-  ), url('@/assets/banner_image_1280x720.jpg');
-  background-size: cover;
-}
-
-.article3Image {
-  background: linear-gradient(
-    to bottom,
-    rgba(127, 127, 127, 0.404),
-    #c7c79234
-  ), url('@/assets/banner_image_1280x720.jpg');
-  background-size: cover;
-}
-
-.imageText {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0px;
-  position: absolute;
-}
-
-.opaqueBackground {
-  background-color: black;
-  height: 80%;
-  width: 80%;
-  margin: auto;
-  opacity: 0.5;
 }
 
 </style>

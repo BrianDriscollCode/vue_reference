@@ -1,4 +1,7 @@
 1. Plan layout --
 2. Create the scaffolding --
-3. Create the layout (CSS positioning, vue pages, JavaScript)
+3. Create the layout (CSS positioning, vue pages, JavaScript) --
 4. Make a simple 1st and 2nd component page
+5. Make banner move with mouse
+    A) get the method for tracking mouse to work onhover/movement
+6. Make images of content get bigger onhover

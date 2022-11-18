@@ -22,7 +22,8 @@ export default {
 
 .TopBar {
     height: 7%;
-    background-color: rgb(85, 255, 29);
+    background-color: #14213D;
+    color: white;
 }
 
 </style>
