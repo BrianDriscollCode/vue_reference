@@ -3,7 +3,7 @@
   <!-- **refer to the next "1A" entry for future task description -->
   <div class="MainParentElement" :style="{ flexDirection: isDocumentation }"> 
 
-    <!-- These are repositioned based and routed based on  -->
+    <!-- These are repositioned based on if route is documentation  -->
     <div class="SecondaryNavigationElement" :style="{ width: navigationLength }">
       <RouterView name="LeftSideBar" @docsTrue="isPageDocumentation"></RouterView>
       <RouterView name="NavBar" @docsTrue="isPageDocumentation"></RouterView>

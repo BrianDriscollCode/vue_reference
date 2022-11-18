@@ -15,21 +15,20 @@
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
-                        <router-link to="/home" class="routerLinkText"> Getting Started </router-link>
+                        <router-link to="/documentation/getting-started" class="routerLinkText"> Getting Started </router-link>
                     </div>
                     <div class="itemContainer">
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
-                        <router-link to="/home" class="routerLinkText"> Making a Component </router-link>
+                        <router-link to="/documentation/making-a-component" class="routerLinkText"> Making a Component </router-link>
                     </div>
                     <div class="itemContainer">
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
-                        <router-link to="/home" class="routerLinkText"> Methods </router-link>
+                        <router-link to="/documentation/methods" class="routerLinkText"> Methods </router-link>
                     </div>
-                  
             </div>
             <div class="vueComponentsWrapper">
                 <h2 class="docsSectionTitle"> Vue Components </h2> 
@@ -38,14 +37,14 @@
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
-                        <router-link to="/home" class="routerLinkText"> Banner </router-link>
+                        <router-link to="/documentation/components/banner" class="routerLinkText"> Banner </router-link>
                     </div>
 
                     <div class="itemContainer">
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
-                        <router-link to="/home" class="routerLinkText"> Article Preview </router-link>
+                        <router-link to="/documentation/components/article-preview" class="routerLinkText"> Article Preview </router-link>
                     </div>
             </div>
         </section>

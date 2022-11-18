@@ -27,21 +27,23 @@ const routes = [
     }
   },
   //********** Documentation Subjects **********
+  //uses dynamic route @param: documentationPage
   {
-    path: '/documentation/rendering-lists',
-    name: 'RenderingLists',
+    path: '/documentation/:documentationPage',
+    name: 'documentationPages',
     components: {
-      default: () => import('@/views/subjects/RenderingListsLesson.vue'),
+      default: () => import('@/views/DocumentationView.vue'),
       LeftSideBar: () => import('@/components/LeftSideBar.vue'),
       TopBar: () => import('@/components/TopBar.vue'),
     }
   },
   //********** Components **********
+  //uses dynamic route @param: documentationPage
   {
-    path: '/documentation/components/banner-example',
-    name: 'BannerComponentExample',
+    path: '/documentation/components/:documentationPage',
+    name: 'componentExamples',
     components: {
-      default: () => import('@/views/componentExamples/BannerExample.vue'),
+      default: () => import('@/views/DocumentationView.vue'),
       LeftSideBar: () => import('@/components/LeftSideBar.vue'),
       TopBar: () => import('@/components/TopBar.vue'),
     }
