@@ -5,3 +5,4 @@
 5. Make banner move with mouse
     A) get the method for tracking mouse to work onhover/movement
 6. Make images of content get bigger onhover
+7. Fix page resizing when clicking LeftSideBar links 

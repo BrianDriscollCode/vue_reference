@@ -83,6 +83,8 @@ export default {
 .LeftSideBar {
     height: 100%;
     background-color: rgb(250, 250, 249);
+    position: fixed;
+    width: 18%
 }
 
 .documentationShelf {

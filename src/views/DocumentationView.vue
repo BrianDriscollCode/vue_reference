@@ -1,5 +1,5 @@
 <template>
-    <section class="DocumentationView">
+    <main class="DocumentationView">
         
         <!-- All documentation pages "as components" @/components/documentationContent-->
         <!-- 1a: Not sure if "undefined" is the best way to conditionally render this -->
@@ -15,10 +15,10 @@
         <ArticlePreviewComponent v-if="this.page === 'article-preview'"/>
 
         <!-- Random log for error checking -->
-        <p> {{ $route.params.documentationPage }} </p>
+        <!-- <p> {{ $route.params.documentationPage }} </p> -->
         
         <FooterBasic />
-    </section>
+    </main>
 </template>
 
 <script>
@@ -63,7 +63,8 @@ export default {
 
 .DocumentationView {
     background-color: white;
-    height: 93%;
+    overflow-wrap: break-word;
+    margin-top: 6em;
 }
 
 h1 {

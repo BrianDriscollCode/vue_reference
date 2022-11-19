@@ -42,12 +42,12 @@
       isPageDocumentation(truthy, initial) {
         if (truthy === true && initial === true) {
           console.log("row tt", truthy)
-          this.navigationLength = "18%"
+          this.navigationLength = "22%"
           return "row"
         } else if (truthy === true && initial === false) {
           console.log("row tf", truthy)
           this.isDocumentation = "row"
-          this.navigationLength = "18%"
+          this.navigationLength = "22%"
           return "row"
         } else {
           console.log("row f", truthy)
