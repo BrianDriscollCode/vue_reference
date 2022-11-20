@@ -1,12 +1,12 @@
 <template>
   <div 
     class="HomeView" 
-    @click="showPosition" 
-    @mouseover="hover = true"
-    @mouseleave="hover = false"
-    :style="{ backgroundPosition: '40% 30%'}"
+    :style="{ backgroundPositionX: this.xPositionOffset, backgroundPositionY: this.yPositionOffset }"
   >
-    <div class="homeWrapper">
+    <div 
+      class="homeWrapper" 
+      @mousemove="calculatePosition($event)"
+    >
       <h1> This website is a documentation of Vue, built with Vue, to learn Vue </h1>
       <h2> Component examples, detailed write-ups, all broken down and explained simply</h2>
       <div class="buttonWrapper">
@@ -36,17 +36,64 @@ export default {
   data() {
     return {
       image: vue_image,
-      hover: false
+      xPositionOffset: 0,
+      yPositionOffset: 0,
     }
   },
   mounted() {
     console.log("VIEWING Home Page")
   },
   methods: {
-    showPosition(event) {
-      console.log(event.clientX);
+    calculatePosition(event) {
+      const banner = document.querySelector(".homeWrapper")
+      const clientWidth = banner.clientWidth
+      const clientHeight = banner.clientHeight
+      const mousePosition = {
+        x: event.clientX, 
+        y: event.clientY
+      }
+      const screenMidpoint = {
+        width: clientWidth / 2,
+        height: clientHeight / 2
+      }
+      let leftOrRight = ''
+      let upOrDown = ''
+      let moveX = 0
+      let moveY = 0
+
+      if (screenMidpoint.width > mousePosition.x) {
+        leftOrRight = 'left'
+        moveX = (mousePosition.x - screenMidpoint.width) * -1
+      } else {
+        leftOrRight = 'right'
+        moveX = (mousePosition.x - screenMidpoint.width) * -1
+      }
+
+      if (screenMidpoint.height > mousePosition.y) {
+        upOrDown = 'up'
+        moveY = (mousePosition.y - screenMidpoint.height)
+      } else {
+        upOrDown = 'down'
+        moveY = (mousePosition.y - screenMidpoint.height)
+      }
+
+      this.xPositionOffset = `${moveX / 90}px`
+      this.yPositionOffset = `${moveY / 90}px`
+
+
+      console.log(leftOrRight);
+      console.log(moveX, "-movex")
+      console.log(upOrDown)
+      console.log(moveY, "-movey")
+      
+      // console.log(event.clientX, "-x");
+      // console.log(event.clientY, "-y");
+
+      // console.log(event.clientX / (event.clientX / 2))
+      // console.log(event)
+      // console.log(document.querySelector(".homeWrapper").clientWidth)
     }
-  }
+  },
 }
 </script>
 

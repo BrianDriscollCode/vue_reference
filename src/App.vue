@@ -1,6 +1,24 @@
+
+
 <template>
-  <!-- **Future Change 1A: isDocumentation is too abstract  -->
-  <!-- **refer to the next "1A" entry for future task description -->
+  <!-- ************** IMPORTANT NOTE **************
+    This website is broken down into 2 layouts: 
+    (1) Website Section (Home/About) 
+    (2) Documentation Section (subjects/componentExamples)
+
+    Description:
+
+    The App.vue file (this file ) handles the logic for flipping the layouts. 
+    The flip is accomplished by using CSS for positioning/flexbox, style bindings with 
+    number values, and conditional rendering using the isPageDocumentation method
+    and using reactivity via style bindings and state variables in data().
+
+    Also listens for emitters from @LeftSideBar and @NavBar to receive boolean about isDocumentation
+
+  -->
+
+  <!-- **Future Change 1A: isDocumentation is too abstract 
+       **refer to the next "1A" entry for future task description (located below in data()) -->
   <div class="MainParentElement" :style="{ flexDirection: isDocumentation }"> 
 
     <!-- These are repositioned based on if route is documentation  -->
@@ -31,8 +49,8 @@
       }
     },
     methods: {
-      // Based on page whether the page is a doc or not,
-      // changes the layout conditions of a page
+      // Based whether the page is documentation or not,
+      // changes the layout conditions of a page from boolean param
       // @params: truthy - boolean
       //   -- This is set true if page IS documentation
       // @params: initial - boolean

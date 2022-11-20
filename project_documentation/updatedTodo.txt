@@ -1,0 +1,9 @@
+Updated todo list: 
+
+1. Figure out how to add space inside the code highlight (later)
+2. Revisit the banner problem (tracking mouse position)
+3. Revisit the image solution (get different images AND decide on text)
+4. Start looking at logic for documentation and think of how to componentize it
+a little more. 
+5. Revisit the make images bigger on hover problem
+6. Do a wave of a responsive work
