@@ -52,16 +52,16 @@ export default {
       stateClientHeight: 1020
     }
   },
-  watch: {
-    xPositionOffset() {
-      this.xPositionOffset = this.passingMousePosition.x
-      this.yPositionOffset = this.passingMousePosition.y
-    }
-  },
   updated() {
       console.log("-before-", this.xPositionOffset, this.yPositionOffset)
-      this.xPositionOffset = this.passingMousePosition.x
-      this.yPositionOffset = this.passingMousePosition.y
+      // this.xPositionOffset = (this.passingMousePosition.x / 10) - 400
+      // this.yPositionOffset = (this.passingMousePosition.y / 10) - 100
+      
+      this.calculateQuadrant(this.passingMousePosition.x, this.passingMousePosition.y)
+
+      const banner = document.querySelector(".homeWrapper")
+      this.stateClientWidth = banner.clientWidth * 1.9
+      this.stateClientHeight = banner.clientHeight * 1.5
       console.log("-after-",this.xPositionOffset, this.yPositionOffset)
   },
   mounted() {
@@ -71,57 +71,69 @@ export default {
     this.stateClientHeight = banner.clientHeight * 1.5
   },
   methods: {
-    // calculatePosition() {
-    //   console.log(this.mousePosition)
 
-    //   const banner = document.querySelector(".homeWrapper")
-    //   const clientWidth = banner.clientWidth
-    //   const clientHeight = banner.clientHeight
-    //   const mousePosition = {
-    //     x: event.clientX, 
-    //     y: event.clientY
-    //   }
-    //   const screenMidpoint = {
-    //     width: clientWidth / 2,
-    //     height: clientHeight / 2
-    //   }
-    //   let leftOrRight = ''
-    //   let upOrDown = ''
-    //   let moveX = 0
-    //   let moveY = 0
+    //The banner has 4 quadrants, or more specific, 2 states for the
+    //mouse position: [horizontal: up || down, vertical: left || right]
+    //The 2 states cause the background position to be a
+    //positive or negative integer causing opposite movement to the mouse
+    //@params: [x position, y position ]from App.vue (positions on whole page)
+    //
+    //             Horizontal midPoint
+    //             |  
+    //   __________v__________
+    //  |          |          |     **represents banner
+    //  |  top     |  top     |
+    //  |  left    |  right   |
+    //  |          |          |
+    //  ----------------------- vertical midPoint
+    //  |          |          |
+    //  |  bottom  |  bottom  |
+    //  |  left    |  right   |
+    //  |__________|__________|
+    //
+    //  state: [horizontalStatus, verticalStatus]
+    //
+    // The mouse position exists simultaenously in two quadrants
+    // as indicated by the 2 states [horizontalStatus, verticalStatus]
+    // EVEN THOUGH the x and y positions are taken from the whole page
+    // via App.vue, the banner is used for midPoint calculations
+  
+    calculateQuadrant(mousePositionX, mousePositionY) {
+      const banner = document.querySelector(".homeWrapper")
+      const height = banner.clientHeight;
+      const width = banner.clientWidth;
 
-    //   if (screenMidpoint.width > mousePosition.x) {
-    //     leftOrRight = 'left'
-    //     moveX = (mousePosition.x - screenMidpoint.width) * -1
-    //   } else {
-    //     leftOrRight = 'right'
-    //     moveX = (mousePosition.x - screenMidpoint.width) * -1
-    //   }
+      const midPoints = {
+        vertical: width / 2,
+        horizontal: height / 2
+      }
 
-    //   if (screenMidpoint.height > mousePosition.y) {
-    //     upOrDown = 'up'
-    //     moveY = (mousePosition.y - screenMidpoint.height)
-    //   } else {
-    //     upOrDown = 'down'
-    //     moveY = (mousePosition.y - screenMidpoint.height)
-    //   }
+      //This is just some step by step math created from logically
+      //thinking about the screen, half-points, and the mouse position.
+      //There is no definitive equation, just experimentation with logic.
+      //** Use the Method notes for help in this  */
 
-    //   this.xPositionOffset = `${(moveX / 50)}px`
-    //   this.yPositionOffset = `${moveY / 50}px`
+      if (mousePositionX < midPoints.vertical) 
+      {
+        //left quadrant move banner right
+        this.xPositionOffset = (((mousePositionX - midPoints.vertical) / 10) + 400) * -1
+      } 
+      else 
+      {
+        //right quadrant move banner left
+        this.xPositionOffset = (((mousePositionX - midPoints.vertical) / 10) + 400) * -1
+      }
 
-
-    //   console.log(leftOrRight);
-    //   console.log(moveX, "-movex")
-    //   console.log(upOrDown)
-    //   console.log(moveY, "-movey")
-      
-    //   // console.log(event.clientX, "-x");
-    //   // console.log(event.clientY, "-y");
-
-    //   // console.log(event.clientX / (event.clientX / 2))
-    //   // console.log(event)
-    //   // console.log(document.querySelector(".homeWrapper").clientWidth)
-    // }
+      if (mousePositionY < midPoints.horizontal) 
+      {
+        //bottom quadrant move banner up
+        this.yPositionOffset = (((mousePositionY - midPoints.horizontal) / 10) + 200) * -1
+      }
+      else {
+        //top quadrant move banner down
+        this.yPositionOffset = (((mousePositionY - midPoints.horizontal) / 10) + 200) * -1
+      }
+    }
   },
 }
 </script>
@@ -138,7 +150,6 @@ export default {
     #c7c79234
   ), url('@/assets/vue_background.jpg');
   background-size: cover;
-  transition: background 0.3s ease;
  
 }
 
