@@ -19,7 +19,11 @@
 
   <!-- **Future Change 1A: isDocumentation is too abstract 
        **refer to the next "1A" entry for future task description (located below in data()) -->
-  <div class="MainParentElement" :style="{ flexDirection: isDocumentation }"> 
+  <div 
+    class="MainParentElement" 
+    :style="{ flexDirection: isDocumentation }"
+    @mousemove="findMousePosition($event)"
+  > 
 
     <!-- These are repositioned based on if route is documentation  -->
     <div class="SecondaryNavigationElement" :style="{ width: navigationLength }">
@@ -30,7 +34,7 @@
     <div class="SecondaryContentElement" :style="{ width: contentWidth }">
       <RouterView name="TopBar"></RouterView>
       <!-- Main Content -->
-      <RouterView></RouterView>
+      <RouterView :passingMousePosition="mousePosition" ></RouterView>
       <!-- End Main Content -->
     </div>
 </div>
@@ -45,10 +49,16 @@
         // **for flexDirection ("row" || "column")
         isDocumentation: this.isPageDocumentation(true, true),
         navigationLength: "18%",
-        contentWidth: "100%"
+        contentWidth: "100%",
+        mousePosition: {x: 1280, y: 720}
       }
     },
-    methods: {
+    props: ['passingMousePosition'],
+    methods: {     
+      findMousePosition(event) {
+        this.mousePosition.x = event.x
+        this.mousePosition.y = event.y
+      }, 
       // Based whether the page is documentation or not,
       // changes the layout conditions of a page from boolean param
       // @params: truthy - boolean
@@ -73,7 +83,7 @@
           this.navigationLength = "100%"
           return "column"
         }
-      }
+      },
     },
     mounted() {
       console.log("********APP MOUNTED*********")

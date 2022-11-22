@@ -1,11 +1,14 @@
 <template>
   <div 
     class="HomeView" 
-    :style="{ backgroundPositionX: this.xPositionOffset, backgroundPositionY: this.yPositionOffset }"
+    :style="{ 
+      backgroundPositionX: `${this.xPositionOffset}px`, 
+      backgroundPositionY: `${this.yPositionOffset}px`, 
+      backgroundSize: `${this.stateClientWidth}px ${this.stateClientHeight}px`,
+    }"
   >
     <div 
       class="homeWrapper" 
-      @mousemove="calculatePosition($event)"
     >
       <h1> This website is a documentation of Vue, built with Vue, to learn Vue </h1>
       <h2> Component examples, detailed write-ups, all broken down and explained simply</h2>
@@ -14,6 +17,9 @@
       </div>
     </div>  
   </div>
+
+  <p> {{ passingMousePosition.x  }} - x position </p>
+  <p> {{ passingMousePosition.y  }} - y position </p>
 
   <ContentPreview />
   <FooterBasic />
@@ -27,72 +33,95 @@ import ContentPreview from "@/components/ContentPreview"
 import FooterBasic from "@/components/FooterBasic"
 
 export default {
+  
 
   name: 'HomeView',
   components: {
     ContentPreview,
     FooterBasic
   },
+  props: {
+    passingMousePosition: Object
+  },
   data() {
     return {
       image: vue_image,
       xPositionOffset: 0,
       yPositionOffset: 0,
+      stateClientWidth: 1580,
+      stateClientHeight: 1020
     }
+  },
+  watch: {
+    xPositionOffset() {
+      this.xPositionOffset = this.passingMousePosition.x
+      this.yPositionOffset = this.passingMousePosition.y
+    }
+  },
+  updated() {
+      console.log("-before-", this.xPositionOffset, this.yPositionOffset)
+      this.xPositionOffset = this.passingMousePosition.x
+      this.yPositionOffset = this.passingMousePosition.y
+      console.log("-after-",this.xPositionOffset, this.yPositionOffset)
   },
   mounted() {
     console.log("VIEWING Home Page")
+    const banner = document.querySelector(".homeWrapper")
+    this.stateClientWidth = banner.clientWidth * 1.9
+    this.stateClientHeight = banner.clientHeight * 1.5
   },
   methods: {
-    calculatePosition(event) {
-      const banner = document.querySelector(".homeWrapper")
-      const clientWidth = banner.clientWidth
-      const clientHeight = banner.clientHeight
-      const mousePosition = {
-        x: event.clientX, 
-        y: event.clientY
-      }
-      const screenMidpoint = {
-        width: clientWidth / 2,
-        height: clientHeight / 2
-      }
-      let leftOrRight = ''
-      let upOrDown = ''
-      let moveX = 0
-      let moveY = 0
+    // calculatePosition() {
+    //   console.log(this.mousePosition)
 
-      if (screenMidpoint.width > mousePosition.x) {
-        leftOrRight = 'left'
-        moveX = (mousePosition.x - screenMidpoint.width) * -1
-      } else {
-        leftOrRight = 'right'
-        moveX = (mousePosition.x - screenMidpoint.width) * -1
-      }
+    //   const banner = document.querySelector(".homeWrapper")
+    //   const clientWidth = banner.clientWidth
+    //   const clientHeight = banner.clientHeight
+    //   const mousePosition = {
+    //     x: event.clientX, 
+    //     y: event.clientY
+    //   }
+    //   const screenMidpoint = {
+    //     width: clientWidth / 2,
+    //     height: clientHeight / 2
+    //   }
+    //   let leftOrRight = ''
+    //   let upOrDown = ''
+    //   let moveX = 0
+    //   let moveY = 0
 
-      if (screenMidpoint.height > mousePosition.y) {
-        upOrDown = 'up'
-        moveY = (mousePosition.y - screenMidpoint.height)
-      } else {
-        upOrDown = 'down'
-        moveY = (mousePosition.y - screenMidpoint.height)
-      }
+    //   if (screenMidpoint.width > mousePosition.x) {
+    //     leftOrRight = 'left'
+    //     moveX = (mousePosition.x - screenMidpoint.width) * -1
+    //   } else {
+    //     leftOrRight = 'right'
+    //     moveX = (mousePosition.x - screenMidpoint.width) * -1
+    //   }
 
-      this.xPositionOffset = `${moveX / 90}px`
-      this.yPositionOffset = `${moveY / 90}px`
+    //   if (screenMidpoint.height > mousePosition.y) {
+    //     upOrDown = 'up'
+    //     moveY = (mousePosition.y - screenMidpoint.height)
+    //   } else {
+    //     upOrDown = 'down'
+    //     moveY = (mousePosition.y - screenMidpoint.height)
+    //   }
+
+    //   this.xPositionOffset = `${(moveX / 50)}px`
+    //   this.yPositionOffset = `${moveY / 50}px`
 
 
-      console.log(leftOrRight);
-      console.log(moveX, "-movex")
-      console.log(upOrDown)
-      console.log(moveY, "-movey")
+    //   console.log(leftOrRight);
+    //   console.log(moveX, "-movex")
+    //   console.log(upOrDown)
+    //   console.log(moveY, "-movey")
       
-      // console.log(event.clientX, "-x");
-      // console.log(event.clientY, "-y");
+    //   // console.log(event.clientX, "-x");
+    //   // console.log(event.clientY, "-y");
 
-      // console.log(event.clientX / (event.clientX / 2))
-      // console.log(event)
-      // console.log(document.querySelector(".homeWrapper").clientWidth)
-    }
+    //   // console.log(event.clientX / (event.clientX / 2))
+    //   // console.log(event)
+    //   // console.log(document.querySelector(".homeWrapper").clientWidth)
+    // }
   },
 }
 </script>
@@ -109,6 +138,8 @@ export default {
     #c7c79234
   ), url('@/assets/vue_background.jpg');
   background-size: cover;
+  transition: background 0.3s ease;
+ 
 }
 
 .HomeView h1 {
