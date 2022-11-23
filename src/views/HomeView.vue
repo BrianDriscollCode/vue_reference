@@ -49,11 +49,14 @@ export default {
       xPositionOffset: 0,
       yPositionOffset: 0,
       stateClientWidth: 1580,
-      stateClientHeight: 1020
+      stateClientHeight: 1020,
+      currentBannerXPosition: 0,
+      currentBannerYPosition: 0,
+      futureBannerXPosition: 0,
+      futureBannerYPositon: 0,
     }
   },
   updated() {
-      console.log("-before-", this.xPositionOffset, this.yPositionOffset)
       // this.xPositionOffset = (this.passingMousePosition.x / 10) - 400
       // this.yPositionOffset = (this.passingMousePosition.y / 10) - 100
       
@@ -62,7 +65,6 @@ export default {
       const banner = document.querySelector(".homeWrapper")
       this.stateClientWidth = banner.clientWidth * 1.9
       this.stateClientHeight = banner.clientHeight * 1.5
-      console.log("-after-",this.xPositionOffset, this.yPositionOffset)
   },
   mounted() {
     console.log("VIEWING Home Page")
@@ -116,12 +118,27 @@ export default {
       if (mousePositionX < midPoints.vertical) 
       {
         //left quadrant move banner right
-        this.xPositionOffset = (((mousePositionX - midPoints.vertical) / 10) + 400) * -1
+        let futurePosition = (((mousePositionX - midPoints.vertical) / 10) + 400) * -1
+        this.futureBannerXPosition = futurePosition;
+        
+        if (futurePosition > this.currentBannerXPosition) {
+          console.log("adding left quad")
+          this.currentBannerXPosition += 0.5;
+          this.xPositionOffset += 0.5;
+        }
+        console.log("futurePosition: ", futurePosition)
+        console.log("currentBannerXPosition: ", this.currentBannerXPosition)
+        console.log("xPositionOffset: ", this.xPositionOffset)
       } 
       else 
       {
         //right quadrant move banner left
-        this.xPositionOffset = (((mousePositionX - midPoints.vertical) / 10) + 400) * -1
+        let futurePosition = (((mousePositionX - midPoints.vertical) / 10) + 400) * -1
+
+       
+        this.xPositionOffset = futurePosition
+        
+
       }
 
       if (mousePositionY < midPoints.horizontal) 
@@ -134,6 +151,13 @@ export default {
         this.yPositionOffset = (((mousePositionY - midPoints.horizontal) / 10) + 200) * -1
       }
     }
+
+    // I need one more step. IF the resulting calculation equals 
+    // CONDITIONS which are created in relation to current position
+    //, increment that offset towards the result of the calculation
+    //
+    // currentPosition += 1 UNTIL === calculation AND THEN
+    // Think about acceleration
   },
 }
 </script>
@@ -150,7 +174,7 @@ export default {
     #c7c79234
   ), url('@/assets/vue_background.jpg');
   background-size: cover;
- 
+  
 }
 
 .HomeView h1 {
