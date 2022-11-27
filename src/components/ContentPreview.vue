@@ -3,9 +3,14 @@
         <h3> Latest Vue Content </h3>
 
     <div class="articles">
-      <div class="singleArticle article1">
+      <div 
+        class="singleArticle article1" 
+        @mousemove="resizePreviewImage('article1', '960px 540px', true)"
+        @mouseout="resizePreviewImage('article1', '640px 360px', false)"
+
+      >
         <router-link to="/documentation" class="routerLinkContent">
-        <div class="bannerImage article1Image"> 
+        <div class="bannerImage article1Image" id="article1Image"> 
           <div class="opaqueBackground">
             <p class="imageText"> banners </p>
           </div>
@@ -21,9 +26,13 @@
       </div>
 
       
-        <div class="singleArticle article2">
+        <div 
+          class="singleArticle article2"
+          @mousemove="resizePreviewImage('article2', '960px 540px', true)"
+          @mouseout="resizePreviewImage('article2', '640px 360px', false)"
+        >
           <router-link to="/documentation" class="routerLinkContent">
-          <div class="bannerImage article2Image"> 
+          <div class="bannerImage article2Image" id="article2Image"> 
             <div class="opaqueBackground">
               <p class="imageText"> router-view </p>
             </div>
@@ -37,9 +46,13 @@
         </div>
     
 
-      <div class="singleArticle article3">
+      <div 
+        class="singleArticle article3"
+        @mousemove="resizePreviewImage('article3', '960px 540px', true)"
+        @mouseout="resizePreviewImage('article3', '640px 360px', false)"
+      >
         <router-link to="/documentation" class="routerLinkContent">
-        <div class="bannerImage article3Image"> 
+        <div class="bannerImage article3Image" id="article3Image"> 
           <div class="opaqueBackground">
             <p class="imageText"> v:bind </p>
           </div>
@@ -57,11 +70,52 @@
 </template>
 
 <script>
+
 export default {
     name: "ContentPreview",
     methods: {
         tempLog() {
             console.log("Content Preview Mounted")
+        },
+        resizePreviewImage(imageLocation, sizes, isHovering) {
+
+          const article1 = document.querySelector(".article1Image");
+          const article2 = document.querySelector(".article2Image");
+          const article3 = document.querySelector(".article3Image");
+
+          const article1Div = document.querySelector(".article1");
+          const article2Div = document.querySelector(".article2");
+          const article3Div = document.querySelector(".article3");
+
+          let gradientValue = "";
+
+          if (isHovering) 
+          {
+            gradientValue = "linear-gradient(184deg, rgb(101, 190, 159) 0%, rgb(84, 224, 192) 100%)"
+          } 
+          else 
+          {
+            gradientValue = "linear-gradient(184deg, rgb(114, 233, 191) 0%, rgba(97,254,218,1) 100%)" 
+          }
+          
+          switch (imageLocation) {
+            case "article1":
+              article1.style.backgroundSize = sizes;
+              article1Div.style.background = gradientValue;
+              break;
+            case "article2":
+              article2.style.backgroundSize = sizes;
+              article2Div.style.background = gradientValue;
+              break;
+            case "article3":
+              article3.style.backgroundSize = sizes;
+              article3Div.style.background = gradientValue;
+              break;
+            default:
+              console.log("broke");
+              break;
+          }
+
         }
     },
     mounted() {
@@ -93,6 +147,7 @@ export default {
 .singleArticle {
   width: 30%;
   background: linear-gradient(184deg, rgb(114, 233, 191) 0%, rgba(97,254,218,1) 100%);
+  transition: background 0.8s;
 }
 
 .routerLinkContent {
@@ -113,7 +168,9 @@ export default {
     rgba(127, 127, 127, 0.404),
     #c7c79234
   ), url('@/assets/banner_image_1280x720.jpg');
-  background-size: cover;
+  background-size: 640px 360px;
+  background-position: center;
+  transition: background 0.7s;
 }
 
 .article2Image {
@@ -122,7 +179,9 @@ export default {
     rgba(127, 127, 127, 0.404),
     #c7c79234
   ), url('@/assets/banner_image_1280x720.jpg');
-  background-size: cover;
+  background-size: 640px 360px;
+  background-position: center;
+  transition: background 0.7s;
 }
 
 .article3Image {
@@ -131,7 +190,9 @@ export default {
     rgba(127, 127, 127, 0.404),
     #c7c79234
   ), url('@/assets/banner_image_1280x720.jpg');
-  background-size: cover;
+  background-size: 640px 360px;
+  background-position: center;
+  transition: background 0.7s;
 }
 
 .imageText {
@@ -149,6 +210,7 @@ export default {
 }
 
 .contentPreviewContainer h4 {
+  margin-top: 0;
   font-size: 1.2em;
 }
 
@@ -169,5 +231,36 @@ export default {
     top:0;
     left:0;
     opacity:0.5;
+}
+
+@media screen and (max-width: 1120px) {
+  .articles {
+    width: 80%;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .singleArticle {
+      width: 50%;
+      align-self: center;
+      margin-bottom: 2em;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .articles {
+    width: 80%;
+  }
+  .singleArticle {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .articles {
+    width: 100%;
+  }
+  .singleArticle {
+    width: 90%;
+  }
 }
 </style>

@@ -78,17 +78,30 @@
 
                 <div class="codeSnippet">
                     <vue-code-highlight language="javascript"> 
-                        <pre> <code> &lt;html lang="en"&gt; </code></pre>
-                            &lt;head&gt;
-                            &lt;title&gt;Title&lt;/title&gt;
-                            &lt;/head&gt;
-                            &lt;body&gt;
-                            Some content.
-                            &lt;/body&gt;
-                            &lt;/html&gt;
-                        
-                    </vue-code-highlight>
-                    
+                        <code> <pre>        
+&lt;template&gt; 
+    &lt;h1&gt;Title&lt;/h1&gt;
+    &lt;p @click="logToConsole()" &gt;Click Me&lt;/p&gt;
+
+&lt;/template&gt;
+
+&lt;script&gt;
+    export default {
+        //Some code
+        name: "PageOrComponentName",
+        methods: {
+            logToConsole() {
+                console.log("this is a console log!!!")
+            }
+        }
+    }
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+    //Styles local to template on this file
+&lt;/style&gt;
+                            </pre> </code>
+                    </vue-code-highlight>  
                 </div>
             </div>
             
@@ -145,7 +158,7 @@ h1 {
 }
 
 .codeSnippet {
-    width: 600px;
+    width: 500px;
 }
 
 .articleNavigation {

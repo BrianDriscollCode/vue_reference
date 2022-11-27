@@ -15,6 +15,9 @@
 
     Also listens for emitters from @LeftSideBar and @NavBar to receive boolean about isDocumentation
 
+    Main breakpoints: 1120px, 850px, 580px 
+    Goal is to use other breakpoints sparingly. Website was made for desktop first,
+    then styled for other devices.
   -->
 
   <!-- **Future Change 1A: isDocumentation is too abstract 

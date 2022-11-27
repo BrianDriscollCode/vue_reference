@@ -2,7 +2,7 @@
     <section class="gettingStartedDocumentation">
         <div class="pageWrapper">
             <div class="contentWrapper">
-                <h1> Getting Started With Vue </h1>
+                <h1> Getting Started </h1>
                 <p> You can utilize basic html and JavaScript or Webpack/Vite to utilize Vue. In this section we will
                     focus on using npm, the Vue CLI, and webpack to spin up the Vue framework.
                 </p>
@@ -23,32 +23,32 @@
                 <p> Now with the terminal, we are going to get some native tooling. Install the Vue eco-system command-line interface, Vue CLI: </p>
                 
                 <div class="codeSnippet">
-                    <!-- <vue-code-highlight language="javascript"> 
+                    <vue-code-highlight language="javascript"> 
                  
                         npm install -g @vue/cli
 
-                    </vue-code-highlight> -->
+                    </vue-code-highlight>
                 </div>
                 
                 <p> Then pick a folder you want your project to be located in. </p>
                 <p> In that folder, type this in the terminal: </p>
 
                 <div class="codeSnippet">
-                    <!-- <vue-code-highlight language="javascript"> 
+                    <vue-code-highlight language="javascript"> 
                  
                         vue create project-name 
 
-                    </vue-code-highlight> -->
+                    </vue-code-highlight>
                 </div>
                 
                 <p> After it is done downloading. You can now spin up your project: </p>
                 
                 <div class="codeSnippet">
-                    <!-- <vue-code-highlight language="javascript"> 
+                    <vue-code-highlight language="javascript"> 
                  
                         npm run serve
 
-                    </vue-code-highlight> -->
+                    </vue-code-highlight>
                 </div>
 
                 <h2> Resources for Learning </h2>
@@ -76,26 +76,32 @@
                     <strong> Because Vue looks like html/css/JavaScript! </strong>
                 </p>
 
-                <p> let jan = 10 </p>
-
                 <div class="codeSnippet">
-                    
-                </div>
+                    <vue-code-highlight language="javascript"> 
+                        <code> <pre>        
+&lt;template&gt; 
+    &lt;h1&gt;Title&lt;/h1&gt;
+    &lt;p @click="logToConsole()" &gt;Click Me&lt;/p&gt;
 
-                <div class="codeSnippet">
-                    <!-- vue-code-highlight language="javascript"> 
-                            <pre> <code> &lt;html lang="en"&gt; </code></pre>
-                            &lt;head&gt;
-                            &lt;title&gt;Title&lt;/title&gt;
-                            &lt;/head&gt;
-                            &lt;body&gt;
-                            Some content.
-                            &lt;/body&gt;
-                            &lt;/html&gt;
-                        
-                        </vue-code-highlight> -->
+&lt;/template&gt;
 
-                    
+&lt;script&gt;
+    export default {
+        //Some code
+        name: "PageOrComponentName",
+        methods: {
+            logToConsole() {
+                console.log("this is a console log!!!")
+            }
+        }
+    }
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+    //Styles local to template on this file
+&lt;/style&gt;
+                            </pre> </code>
+                    </vue-code-highlight>  
                 </div>
             </div>
             
@@ -114,12 +120,13 @@
 </template>
 
 <script>
-
+import VueCodeHighlight from "vue-code-highlight/src/CodeHighlight.vue";
+import "vue-code-highlight/themes/duotone-sea.css";
 
 export default {
     name: "GettingStarted",
     components: {
-     
+        VueCodeHighlight,
     }
     
 }
@@ -151,7 +158,7 @@ h1 {
 }
 
 .codeSnippet {
-    width: 600px;
+    width: 500px;
 }
 
 .articleNavigation {

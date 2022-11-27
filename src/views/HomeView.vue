@@ -1,10 +1,11 @@
 <template>
   <div 
     class="HomeView" 
+    id="HomeViewMain"
     :style="{ 
-      backgroundPositionX: `${this.xPositionOffset}px`, 
-      backgroundPositionY: `${this.yPositionOffset}px`, 
-      backgroundSize: `${this.stateClientWidth}px ${this.stateClientHeight}px`,
+      backgroundPositionX: `${xPositionOffset}px`, 
+      backgroundPositionY: `${yPositionOffset}px`, 
+      backgroundSize: `${this.stateClientWidth}px ${this.stateClientHeight}px`
     }"
   >
     <div 
@@ -62,13 +63,13 @@ export default {
       
       this.calculateQuadrant(this.passingMousePosition.x, this.passingMousePosition.y)
 
-      const banner = document.querySelector(".homeWrapper")
+      const banner = document.querySelector(".HomeView")
       this.stateClientWidth = banner.clientWidth * 1.9
       this.stateClientHeight = banner.clientHeight * 1.5
   },
   mounted() {
     console.log("VIEWING Home Page")
-    const banner = document.querySelector(".homeWrapper")
+    const banner = document.querySelector(".HomeView")
     this.stateClientWidth = banner.clientWidth * 1.9
     this.stateClientHeight = banner.clientHeight * 1.5
   },
@@ -101,14 +102,19 @@ export default {
     // via App.vue, the banner is used for midPoint calculations
   
     calculateQuadrant(mousePositionX, mousePositionY) {
-      const banner = document.querySelector(".homeWrapper")
+      //lerp currentPosition, futurePosition, percent
+      const lerp = (x, y, a) => x * (1 - a) + y * a;
+      lerp(20, 20, 0.5)
+      const banner = document.getElementById("HomeViewMain")
       const height = banner.clientHeight;
-      const width = banner.clientWidth;
+      const width = banner.clientWidth;  
 
       const midPoints = {
         vertical: width / 2,
         horizontal: height / 2
       }
+
+
 
       //This is just some step by step math created from logically
       //thinking about the screen, half-points, and the mouse position.
@@ -118,17 +124,20 @@ export default {
       if (mousePositionX < midPoints.vertical) 
       {
         //left quadrant move banner right
-        let futurePosition = (((mousePositionX - midPoints.vertical) / 10) + 400) * -1
-        this.futureBannerXPosition = futurePosition;
+        // let futurePosition = (((mousePositionX - midPoints.vertical) / 10) + 400) * -1
+        // this.futureBannerXPosition = futurePosition;
         
-        if (futurePosition > this.currentBannerXPosition) {
-          console.log("adding left quad")
-          this.currentBannerXPosition += 0.5;
-          this.xPositionOffset += 0.5;
-        }
-        console.log("futurePosition: ", futurePosition)
-        console.log("currentBannerXPosition: ", this.currentBannerXPosition)
-        console.log("xPositionOffset: ", this.xPositionOffset)
+        // if (futurePosition > this.currentBannerXPosition) {
+        //   console.log("adding left quad")
+        //   this.currentBannerXPosition += 0.5;
+        //   this.xPositionOffset += 0.5;
+        // }
+        // console.log("futurePosition: ", futurePosition);
+        // console.log("currentBannerXPosition: ", this.currentBannerXPosition);
+        // console.log("xPositionOffset: ", this.xPositionOffset);
+
+        let futurePosition = (((mousePositionX - midPoints.vertical) / 10) + 400) * -1
+        this.xPositionOffset = futurePosition
       } 
       else 
       {
@@ -175,6 +184,28 @@ export default {
   ), url('@/assets/vue_background.jpg');
   background-size: cover;
   
+  
+}
+
+/* Background Animation */
+
+@keyframes moveBackground {
+
+  0% {
+    background-position-x: 50%;
+    background-position-y: 50%;
+  }
+
+  50% {
+    background-position-x: 40%;
+    background-position-y: 40%;
+  }
+
+  100% {
+    background-position-x: 50%;
+    background-position-y: 50%;
+  }
+
 }
 
 .HomeView h1 {
@@ -244,6 +275,28 @@ button, input[type="submit"], input[type="reset"] {
   background-color: #F29602;
   transition: color 0.1s;
   color: rgb(215, 215, 215);
+}
+
+@media screen and (max-width: 1120px) {
+  .homeWrapper {
+    width: 100%;
+  }
+
+  .homeWrapper h1 {
+    font-size: 2.8em;
+  }
+}
+
+@media screen and (max-width: 850px) {
+
+}
+
+@media screen and (max-width: 580px) {
+  .homeWrapper h1 {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+  }
 }
 
 </style>
