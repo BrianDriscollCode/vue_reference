@@ -2,80 +2,33 @@
     <section class="gettingStartedDocumentation">
         <div class="pageWrapper">
             <div class="contentWrapper">
+                
                 <h1> Making a Component </h1>
-                <p> You can utilize basic html and JavaScript or Webpack/Vite to utilize Vue. In this section we will
-                    focus on using npm, the Vue CLI, and webpack to spin up the Vue framework.
-                </p>
 
-                <h2> What is Vue? </h2>
-                <p> Vue is a JavaScript framework used for creating user interfaces. It allows you to break
-                    down your application into much smaller components. This allows for more seperation of
-                    concerns and an intuitive way to structure an application.
-                </p>
+                <p> There are <u>three parts</u> of a Vue Component/Page: </p>
+                <ol>
+                    <li> 
+                        <b>Template</b> - Holds HTML that is reactive. In 
+                        other words, Vue let’s you use syntatic sugar to 
+                        add conditional rendering, variables, and other 
+                        logic to your HTML. 
+                    </li>
+                    <li>
+                       <b>Script</b> - Different hooks and ways to create 
+                       JavaScript logic using methods, data (and state), 
+                       and lifecycle methods to program logic for 
+                       rendering your page. 
+                    </li>
+                    <li>
+                        <b>Style</b> - Where you create CSS. If the word 
+                        “scoped” is added to the styles tag the styles 
+                        will only apply to the HTML in the template in 
+                        the current component.
+                    </li>
 
-                <h2> Downloading Vue </h2>
-                <p> To continue, you will need: </p>
-                <ul>
-                    <li> Node.js: <a href="https://nodejs.org/en/download/"> https://nodejs.org/en/download/ </a> </li>
-                    <li> npm: <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm"> https://docs.npmjs.com/downloading-and-installing-node-js-and-npm </a> </li>
+                </ol>
 
-                </ul>
-                <p> Now with the terminal, we are going to get some native tooling. Install the Vue eco-system command-line interface, Vue CLI: </p>
-                
-                <div class="codeSnippet">
-                    <vue-code-highlight language="javascript"> 
-                 
-                        npm install -g @vue/cli
-
-                    </vue-code-highlight>
-                </div>
-                
-                <p> Then pick a folder you want your project to be located in. </p>
-                <p> In that folder, type this in the terminal: </p>
-
-                <div class="codeSnippet">
-                    <vue-code-highlight language="javascript"> 
-                 
-                        vue create project-name 
-
-                    </vue-code-highlight>
-                </div>
-                
-                <p> After it is done downloading. You can now spin up your project: </p>
-                
-                <div class="codeSnippet">
-                    <vue-code-highlight language="javascript"> 
-                 
-                        npm run serve
-
-                    </vue-code-highlight>
-                </div>
-
-                <h2> Resources for Learning </h2>
-                <p> There are many resources to learn Vue from due to its large community! </p>
-                <ul> 
-                    <li> <a href="https://vuejs.org/guide/introduction.html"> Main Vue Documentation </a> </li>
-                    <li> <a href="https://www.vuemastery.com/courses/"> Vue Mastery (paid courses) </a> </li>
-                    <li> <a href="https://www.youtube.com/watch?v=YrxBCBibVo0&list=PL4cUxeGkcC9hYYGbV60Vq3IXYNfDk8At1"> The Net Ninja YouTube Video Course (free) </a> </li>
-                    
-                </ul>
-
-                <h2> Common Front-End Features </h2>
-                <p> Why should you use Vue!? Vue is another Frontend Framework like
-                    React, Angular, and Svelte. All frameworks have their own unique system
-                    and way of doing things... Vue is no different. It has been described
-                    as "easy to pickup", but I think a better description would be "easier
-                    to collaborate with non-Vue and Vue developers alike".
-                </p>
-                <p> 
-                    If you already know a concept like conditional rendering
-                    or using html with added functionality, then Vue is easy-to-understand.
-                </p>
-                <p> 
-                    If you just know JavaScript, it's almost as easy to get started.
-                    <strong> Because Vue looks like html/css/JavaScript! </strong>
-                </p>
-
+                <p> Vue takes this code and compiles it down into JavaScript code. </p>
                 <div class="codeSnippet">
                     <vue-code-highlight language="javascript"> 
                         <code> <pre>        
@@ -93,7 +46,12 @@
             logToConsole() {
                 console.log("this is a console log!!!")
             }
-        }
+        },
+        data() {
+            return: {
+                isHover: false
+            }
+        },
     }
 &lt;/script&gt;
 
@@ -103,8 +61,157 @@
                             </pre> </code>
                     </vue-code-highlight>  
                 </div>
+
+            <h2> A Quick Review of Template </h2>
+            <p> To add variables to your HTML, you can use text 
+                interpolation. This allows you to use mustache syntax 
+                to change text output. </p>
+
+            <div class="codeSnippet">
+                    <vue-code-highlight language="javascript"> 
+                        <code> <pre>        
+&lt;template&gt; 
+    &lt;span&gt; Hello &#123;&#123; textVariable &#125;&#125; &lt;/span&gt;
+&lt;/template&gt;
+
+                            </pre> </code>
+                    </vue-code-highlight>  
             </div>
-            
+            <p>The word “textVariable” is now capable of printing whatever the value inside it is. </p>
+            <p> Binding to HTML attributes is important to. To accomplish this, use v-bind (or its shorthand): </p>
+
+            <div class="codeSnippet">
+                    <vue-code-highlight language="javascript"> 
+                        <code> <pre>   
+//v-bind     
+&lt;div v-bind:id="dynamicId"&gt; &lt;/div&gt;
+//short hand for v-bind
+&lt;div :id="dynamicId"&gt; &lt;/div&gt;
+                            </pre> </code>
+                    </vue-code-highlight>  
+            </div>
+
+            <p>This is pretty similar to the main documentation, but I 
+                would add one extra use to know about right here. 
+                Conditionally rendering attributes for style purposes.  
+            </p>
+
+            <div class="codeSnippet">
+                    <vue-code-highlight language="javascript"> 
+                        <code> <pre>   
+&lt;div :style=”{ backgroundImage: ImageVariable }”&gt; &lt;/div&gt;
+                            </pre> </code>
+                    </vue-code-highlight>  
+            </div>
+
+            <p> Or you can you template literals: </p>
+
+            <div class="codeSnippet">
+                    <vue-code-highlight language="javascript"> 
+                        <code> <pre>   
+&lt;div :style=”{isChecking ? {backgroundColor: ‘red’}: {backgroundColor: ’green’}”&gt; &lt;/div&gt;
+                            </pre> </code>
+                    </vue-code-highlight>  
+            </div>
+        
+            <h2> The Script Area </h2>
+
+            There are many important functions of the script area. To name a few: 
+
+            <ol>
+                <li> Give your component a name </li>
+                <li> Store data </li>
+                <li> Create methods </li>
+                <li> Instantiate other components </li>
+                <li> Pass or Receive Props </li>
+                <li> And more! </li>
+            </ol>
+
+            <p> That's alot to go over! You may not understand all of it, but here's an example of doing all of this now: </p>
+        
+            <div class="codeSnippet">
+                    <vue-code-highlight language="javascript"> 
+                        <code> <pre>     
+&lt;template&gt; 
+    &lt;h1&gt;Title&lt;/h1&gt;
+    //On click calls function from 'method' area in script
+    &lt;p @click="logToConsole()" &gt;Click Me&lt;/p&gt;
+
+    //Instatiated from 'components' in the script area
+    &lt;ComponentName1/&gt; 
+    //passes prop 'details'
+    &lt;ComponentName2 details="Great Worker" /&gt;
+
+&lt;/template&gt;
+
+&lt;script&gt;
+    import componentName1 from "/folder/path";
+    import componentName2 from "/folder/path";
+
+    export default {
+        name: "PageOrComponentName",
+        data() {
+            return: {
+                username: "John",
+            }
+        },
+        methods: {
+            logToConsole() {
+                console.log(this.username)
+            }
+        },
+        components: {
+            componentName1,
+            componentName2,
+        },
+        props: ['details'] //Declaring a prop
+        
+    }
+&lt;/script&gt;
+
+                            </pre> </code>
+                    </vue-code-highlight>  
+                </div>
+                <h2> The Script Area </h2>
+
+                <p> All you have to do is include class tags in your template and you can write CSS that is specifically made for this component. </p>
+
+                <div class="codeSnippet">
+                    <vue-code-highlight language="javascript"> 
+                        <code> <pre>     
+&lt;template&gt; 
+    &lt;h1&gt;Title&lt;/h1&gt;
+    &lt;p class="paragraph" &gt;Some random text&lt;/p&gt;
+
+&lt;/template&gt;
+
+&lt;style scoped&gt;
+
+    //If an h1 exists on another component currently rendered,
+    //this style would stay local to this component
+    h1 {
+        font-size: 5em;
+    }
+
+    .paragraph {
+        background-color: green;
+    }
+    
+&lt;/style&gt;
+
+                            </pre> </code>
+                    </vue-code-highlight>  
+                </div>
+
+                <p> That is all three areas of a component in Vue. The template, script, and styles area. The concepts for each part
+                    will be gone over in more detail in the further sections. At this point, you should have a basic understanding of how 
+                    a simple application looks!
+                </p>
+        </div> 
+        <!-- End of content  -->
+        
+        
+
             <div class="articleNavigation">
                 <h3> In this Article </h3> 
                 <div class="articleNavigationWrapper">

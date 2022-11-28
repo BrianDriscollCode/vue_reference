@@ -9,6 +9,7 @@
         <GettingStarted v-if="this.page === 'getting-started'"/>
         <MakingAComponent v-if="this.page === 'making-a-component'"/>
         <MethodsDoc v-if="this.page === 'methods'"/>
+        <IntroductionDoc v-if="this.page === 'introduction'"/>
         
         <!--  Component examples "as components" @/components/componentContent -->
         <BannerComponent v-if="this.page === 'banner'"/>
@@ -23,6 +24,7 @@
 
 <script>
 import FooterBasic from "@/components/FooterBasic"
+import IntroductionDoc from "@/components/documentationContent/1_A_Introduction"
 import GettingStarted from "@/components/documentationContent/1_GettingStarted"
 import MakingAComponent from "@/components/documentationContent/2_MakingAComponent"
 import MethodsDoc from "@/components/documentationContent/3_MethodsDoc"
@@ -35,6 +37,7 @@ export default {
         // Page Element
         FooterBasic,
         // Documentation 
+        IntroductionDoc,
         GettingStarted,
         MakingAComponent,
         MethodsDoc,

@@ -15,6 +15,12 @@
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
+                        <router-link to="/documentation/introduction" class="routerLinkText"> Introduction </router-link>
+                    </div>
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
                         <router-link to="/documentation/getting-started" class="routerLinkText"> Getting Started </router-link>
                     </div>
                     <div class="itemContainer">
@@ -28,6 +34,66 @@
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
                         <router-link to="/documentation/methods" class="routerLinkText"> Methods </router-link>
+                    </div>
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/methods" class="routerLinkText"> Routing </router-link>
+                    </div>
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/methods" class="routerLinkText"> Props </router-link>
+                    </div>
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/methods" class="routerLinkText"> Lifecycle </router-link>
+                    </div>
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/methods" class="routerLinkText"> Directives </router-link>
+                    </div>
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/methods" class="routerLinkText"> Conditional Rendering </router-link>
+                    </div>
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/methods" class="routerLinkText"> Vue's API Reference </router-link>
+                    </div>
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/methods" class="routerLinkText"> Reactivity and State </router-link>
+                    </div>
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/methods" class="routerLinkText"> Vue's API Reference </router-link>
+                    </div>
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/methods" class="routerLinkText"> Working Inline the Template </router-link>
+                    </div>
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/methods" class="routerLinkText"> Shared State Solution </router-link>
                     </div>
             </div>
             <div class="vueComponentsWrapper">
@@ -45,6 +111,13 @@
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
                         <router-link to="/documentation/components/article-preview" class="routerLinkText"> Article Preview </router-link>
+                    </div>
+
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/components/article-preview" class="routerLinkText"> Multiple Layout </router-link>
                     </div>
             </div>
         </section>

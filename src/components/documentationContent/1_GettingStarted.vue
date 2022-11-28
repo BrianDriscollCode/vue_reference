@@ -68,11 +68,11 @@
                     to collaborate with non-Vue and Vue developers alike".
                 </p>
                 <p> 
-                    If you already know a concept like conditional rendering
+                    If you already know concepts like conditional rendering
                     or using html with added functionality, then Vue is easy-to-understand.
                 </p>
                 <p> 
-                    If you just know JavaScript, it's almost as easy to get started.
+                    If you just know JavaScript, it's easy to get started.
                     <strong> Because Vue looks like html/css/JavaScript! </strong>
                 </p>
 
@@ -103,6 +103,9 @@
                             </pre> </code>
                     </vue-code-highlight>  
                 </div>
+
+                <h2> *** NEED TO ADD *** </h2>
+                <p> This section goes over the Vue project, main.js, app.js, and other files. </p>
             </div>
             
             <div class="articleNavigation">
