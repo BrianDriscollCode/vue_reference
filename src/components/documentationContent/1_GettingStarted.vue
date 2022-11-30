@@ -104,8 +104,90 @@
                     </vue-code-highlight>  
                 </div>
 
-                <h2> *** NEED TO ADD *** </h2>
-                <p> This section goes over the Vue project, main.js, app.js, and other files. </p>
+                <h2> Quick Look at a Vue App's Structure </h2>
+                <img :src="photo" />
+                <p> The highlighted components represent three important parts of a Vue Application: </p>
+                <ul>
+                    <li> main.js </li>
+                    <li> App.vue </li>
+                    <li> Components </li>
+                </ul>
+                <h3> File : main.js </h3>
+                <p> This file initiates the application with "createApp" from Vue. </p>
+                    
+                <p> Also, if you downloaded a library or other package using NPM, Vite, or the Vue CLI,
+                    this is where you can add previously downloaded packages like routers, state management, and more to your application. 
+                    In this example, we are wrapping store (Vuex), router (Vue Router), and highlightJS to our Vue Application then mounting it. </p>
+                <p> Think about it like you are wrapping your application with
+                    functionality from another codebase. </p>
+
+<div class="codeSnippet">
+                    <vue-code-highlight language="javascript"> 
+                        <code> <pre>        
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router'
+import store from './store'
+import highlightJS from "highlight.js"
+
+createApp(App).use(store).use(router).use(highlightJS).mount('#app')
+                            </pre> </code>
+                    </vue-code-highlight>  
+                </div>
+                <h3> File : App.vue </h3>
+                <p> Here is the first parent in your application tree. 
+                    From components, to complicated siloed structures, 
+                    or even just a basic web page can be located here.</p>
+
+<div class="codeSnippet">
+                    <vue-code-highlight language="javascript"> 
+                        <code> <pre>        
+&lt;template&gt;
+      &lt;NavBar /&gt;
+      &lt;TodoListContainer /&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import NavBar from "./components/main/NavBar.vue";
+import TodoListContainer from "./components/todo_list/TodoListContainer.vue";
+import "./assets/global.css";
+
+export default {
+  name: 'App',
+  components: {
+    NavBar,
+    TodoListContainer
+  }
+}
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: rgb(47, 93, 211);
+}
+&lt;/style&gt;
+                            </pre> </code>
+                    </vue-code-highlight>  
+                </div>
+                <h3> File : Components </h3>
+                <p> Just like how the App.vue file
+                    contains a template, script, and css section, components
+                    are formed exactly the same. 
+                </p>
+
+                <p> These are <b> Single-File-Components </b> </p>
+
+                In the next section we go over each section of a component so you can understand how they work!
+
+
+
+
+
             </div>
             
             <div class="articleNavigation">
@@ -130,6 +212,12 @@ export default {
     name: "GettingStarted",
     components: {
         VueCodeHighlight,
+
+    },
+    computed: {
+        photo() {
+            return require("../../assets/VueNavigationSECOND.jpg")
+        }
     }
     
 }

@@ -33,67 +33,67 @@
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
-                        <router-link to="/documentation/methods" class="routerLinkText"> Methods </router-link>
+                        <router-link to="/documentation/methods" class="routerLinkText"> <del> Methods </del></router-link>
                     </div>
                     <div class="itemContainer">
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
-                        <router-link to="/documentation/methods" class="routerLinkText"> Routing </router-link>
+                        <router-link to="/documentation/methods" class="routerLinkText"> <del> Routing </del> </router-link>
                     </div>
                     <div class="itemContainer">
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
-                        <router-link to="/documentation/methods" class="routerLinkText"> Props </router-link>
+                        <router-link to="/documentation/methods" class="routerLinkText"> <del> Props </del></router-link>
                     </div>
                     <div class="itemContainer">
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
-                        <router-link to="/documentation/methods" class="routerLinkText"> Lifecycle </router-link>
+                        <router-link to="/documentation/methods" class="routerLinkText"> <del> Lifecycle </del></router-link>
                     </div>
                     <div class="itemContainer">
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
-                        <router-link to="/documentation/methods" class="routerLinkText"> Directives </router-link>
+                        <router-link to="/documentation/methods" class="routerLinkText"> <del> Directives </del></router-link>
                     </div>
                     <div class="itemContainer">
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
-                        <router-link to="/documentation/methods" class="routerLinkText"> Conditional Rendering </router-link>
+                        <router-link to="/documentation/methods" class="routerLinkText"> <del> Conditional Rendering </del></router-link>
                     </div>
                     <div class="itemContainer">
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
-                        <router-link to="/documentation/methods" class="routerLinkText"> Vue's API Reference </router-link>
+                        <router-link to="/documentation/methods" class="routerLinkText"> <del> Vue's API Reference </del></router-link>
                     </div>
                     <div class="itemContainer">
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
-                        <router-link to="/documentation/methods" class="routerLinkText"> Reactivity and State </router-link>
+                        <router-link to="/documentation/methods" class="routerLinkText"> <del> Reactivity and State </del></router-link>
                     </div>
                     <div class="itemContainer">
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
-                        <router-link to="/documentation/methods" class="routerLinkText"> Vue's API Reference </router-link>
+                        <router-link to="/documentation/methods" class="routerLinkText"> <del> Vue's API Reference </del></router-link>
                     </div>
                     <div class="itemContainer">
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
-                        <router-link to="/documentation/methods" class="routerLinkText"> Working Inline the Template </router-link>
+                        <router-link to="/documentation/methods" class="routerLinkText"> <del> Working Inline the Template </del></router-link>
                     </div>
                     <div class="itemContainer">
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
-                        <router-link to="/documentation/methods" class="routerLinkText"> Shared State Solution </router-link>
+                        <router-link to="/documentation/methods" class="routerLinkText"> <del> Shared State Solution </del></router-link>
                     </div>
             </div>
             <div class="vueComponentsWrapper">
@@ -110,14 +110,14 @@
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
-                        <router-link to="/documentation/components/article-preview" class="routerLinkText"> Article Preview </router-link>
+                        <router-link to="/documentation/components/article-preview" class="routerLinkText"> <del> Article Preview </del></router-link>
                     </div>
 
                     <div class="itemContainer">
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
-                        <router-link to="/documentation/components/article-preview" class="routerLinkText"> Multiple Layout </router-link>
+                        <router-link to="/documentation/components/article-preview" class="routerLinkText"> <del> Multiple Layout </del></router-link>
                     </div>
             </div>
         </section>

@@ -9,10 +9,10 @@
         @mouseout="resizePreviewImage('article1', '640px 360px', false)"
 
       >
-        <router-link to="/documentation" class="routerLinkContent">
+        <router-link to="/documentation/components/banner" class="routerLinkContent">
         <div class="bannerImage article1Image" id="article1Image"> 
           <div class="opaqueBackground">
-            <p class="imageText"> banners </p>
+            <p class="imageText"> Banners </p>
           </div>
         </div>
         <div class="contentPreviewContainer">
@@ -31,10 +31,10 @@
           @mousemove="resizePreviewImage('article2', '960px 540px', true)"
           @mouseout="resizePreviewImage('article2', '640px 360px', false)"
         >
-          <router-link to="/documentation" class="routerLinkContent">
+          <router-link to="/documentation/making-a-component" class="routerLinkContent">
           <div class="bannerImage article2Image" id="article2Image"> 
             <div class="opaqueBackground">
-              <p class="imageText"> router-view </p>
+              <p class="imageText"> Components </p>
             </div>
           </div>
           <div class="contentPreviewContainer">
@@ -51,10 +51,10 @@
         @mousemove="resizePreviewImage('article3', '960px 540px', true)"
         @mouseout="resizePreviewImage('article3', '640px 360px', false)"
       >
-        <router-link to="/documentation" class="routerLinkContent">
+        <router-link to="/documentation/getting-started" class="routerLinkContent">
         <div class="bannerImage article3Image" id="article3Image"> 
           <div class="opaqueBackground">
-            <p class="imageText"> v:bind </p>
+            <p class="imageText"> Get Started </p>
           </div>
         </div>
         <div class="contentPreviewContainer">
@@ -167,7 +167,7 @@ export default {
     to bottom,
     rgba(127, 127, 127, 0.404),
     #c7c79234
-  ), url('@/assets/banner_image_1280x720.jpg');
+  ), url('@/assets/futuristic_wave.jpg');
   background-size: 640px 360px;
   background-position: center;
   transition: background 0.7s;
@@ -178,7 +178,7 @@ export default {
     to bottom,
     rgba(127, 127, 127, 0.404),
     #c7c79234
-  ), url('@/assets/banner_image_1280x720.jpg');
+  ), url('@/assets/futuristic_hall.jpg');
   background-size: 640px 360px;
   background-position: center;
   transition: background 0.7s;
@@ -189,7 +189,7 @@ export default {
     to bottom,
     rgba(127, 127, 127, 0.404),
     #c7c79234
-  ), url('@/assets/banner_image_1280x720.jpg');
+  ), url('@/assets/futuristic_geometry.jpg');
   background-size: 640px 360px;
   background-position: center;
   transition: background 0.7s;
@@ -197,7 +197,7 @@ export default {
 
 .imageText {
   color: white;
-  font-size: 4em;
+  font-size: 2.5em;
   font-weight: 700;
   margin-top: auto;
   margin-bottom: auto;

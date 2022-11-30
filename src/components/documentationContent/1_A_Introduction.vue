@@ -19,7 +19,7 @@
                     and NPM. All the necessary tools to get started are in the "Getting-Started" Page.
                 </p>
                 
-                <p> I am also focusing on the <b>Options API</b>. </p>
+                <p> I am also focusing on the <b>Options API</b>. In the future after I get a good handle on this part of Vue I will explore the <b> Composition API</b>. </p>
 
                 <p> One last thing! On top of concepts, the documentation also covers
                     creating simple components from scratch. I think these maybe 

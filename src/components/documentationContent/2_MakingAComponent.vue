@@ -172,9 +172,10 @@
                             </pre> </code>
                     </vue-code-highlight>  
                 </div>
-                <h2> The Script Area </h2>
+                <h2> The Style Area </h2>
 
-                <p> All you have to do is include class tags in your template and you can write CSS that is specifically made for this component. </p>
+                <p> To target specific elements in your template you can add classes or even call the elements themselves.
+                    In both cases, the CSS only affects HTML tags in this template/file.  </p>
 
                 <div class="codeSnippet">
                     <vue-code-highlight language="javascript"> 
