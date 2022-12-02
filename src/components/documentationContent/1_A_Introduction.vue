@@ -2,7 +2,7 @@
     <section class="gettingStartedDocumentation">
         <div class="pageWrapper">
             <div class="contentWrapper">
-                <h1> Introduction </h1>
+                <h1 id="introduction"> Introduction </h1>
                 <p> This website a documentation of a single web developer's reading,
                     implementation, and knowledge of Vue. These are not the official
                     documents for reference. 
@@ -13,7 +13,7 @@
                     it broken down that less seasoned programmers can understand it.
                 </p>
 
-                <h2> The Focus </h2>
+                <h2 id="#theFocus"> The Focus </h2>
 
                 <p> This website will look at Vue from the perspective of using WebPack, Vue CLI,
                     and NPM. All the necessary tools to get started are in the "Getting-Started" Page.
@@ -31,11 +31,8 @@
             <div class="articleNavigation">
                 <h3> In this Article </h3> 
                 <div class="articleNavigationWrapper">
-                    <p> Making a Component </p>
-                    <p> What is Vue </p>
-                    <p> Downloading Vue </p>
-                    <p> Resources for Learning </p>
-                    <p> Common Front-End Features </p>
+                    <a class="innerLink" href="/documentation/introduction#introduction"> Introduction </a>
+                    <a class="innerLink" href="/documentation/introduction#theFocus"> The Focus </a>
                 </div>
             </div>
         </div>
@@ -90,10 +87,16 @@ h1 {
     margin-top: 0;
 }
 
+.innerLink {
+    margin-bottom: 0.625em;
+}
+
 .articleNavigationWrapper {
     border-left: 1px solid black;
     padding: 2px 2px 2px 6px;
-    font-size: 0.825em
+    font-size: 0.825em;
+    display: flex;
+    flex-direction: column;
 }
 
 </style>

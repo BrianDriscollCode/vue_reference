@@ -5,7 +5,9 @@
     :style="{ 
       backgroundPositionX: `${xPositionOffset}px`, 
       backgroundPositionY: `${yPositionOffset}px`, 
-      backgroundSize: `${this.stateClientWidth}px ${this.stateClientHeight}px`
+      backgroundSize: `${this.stateClientWidth}px ${this.stateClientHeight}px`,
+      transition: 'background 1.6s, opacity 1.5s',
+      opacity: `${bannerOpacity}`
     }"
   >
     <div 
@@ -14,13 +16,15 @@
       <h1> This website is a documentation of Vue, built with Vue, to learn Vue </h1>
       <h2> Component examples, detailed write-ups, all broken down and explained simply</h2>
       <div class="buttonWrapper">
-        <router-link to="/documentation"> <button class="viewDocumentationButton"> View Documentation </button> </router-link>
+        <router-link to="/documentation/introduction"> <button class="viewDocumentationButton"> View Documentation </button> </router-link>
       </div>
     </div>  
   </div>
 
-  <p> {{ passingMousePosition.x  }} - x position </p>
-  <p> {{ passingMousePosition.y  }} - y position </p>
+<!-- Really bad hack atm. First used to measure mouse. Then realized banner does not
+update without. This is an isolated issue, will debug if becomes necessary. -->
+  <p style="display: none"> {{ passingMousePosition.x  }} - x position </p> 
+  <p style="display: none"> {{ passingMousePosition.y  }} - y position </p>
 
   <ContentPreview />
   <FooterBasic />
@@ -55,6 +59,7 @@ export default {
       currentBannerYPosition: 0,
       futureBannerXPosition: 0,
       futureBannerYPositon: 0,
+      bannerOpacity: 0
     }
   },
   updated() {
@@ -64,14 +69,18 @@ export default {
       this.calculateQuadrant(this.passingMousePosition.x, this.passingMousePosition.y)
 
       const banner = document.querySelector(".HomeView")
-      this.stateClientWidth = banner.clientWidth * 1.9
-      this.stateClientHeight = banner.clientHeight * 1.5
+      this.stateClientWidth = banner.clientWidth * 1.6 
+      this.stateClientHeight = banner.clientHeight * 1.6
+  },
+  beforeMount() {
+  
   },
   mounted() {
     console.log("VIEWING Home Page")
     const banner = document.querySelector(".HomeView")
     this.stateClientWidth = banner.clientWidth * 1.9
     this.stateClientHeight = banner.clientHeight * 1.5
+    this.bannerOpacity = 1
   },
   methods: {
 
@@ -137,7 +146,7 @@ export default {
         // console.log("xPositionOffset: ", this.xPositionOffset);
 
         let futurePosition = (((mousePositionX - midPoints.vertical) / 10) + 400) * -1
-        this.xPositionOffset = futurePosition
+        this.xPositionOffset = futurePosition * 0.65
       } 
       else 
       {
@@ -145,7 +154,7 @@ export default {
         let futurePosition = (((mousePositionX - midPoints.vertical) / 10) + 400) * -1
 
        
-        this.xPositionOffset = futurePosition
+        this.xPositionOffset = futurePosition * 0.65 
         
 
       }
@@ -153,11 +162,13 @@ export default {
       if (mousePositionY < midPoints.horizontal) 
       {
         //bottom quadrant move banner up
-        this.yPositionOffset = (((mousePositionY - midPoints.horizontal) / 10) + 200) * -1
+        let tempOffset = (((mousePositionY - midPoints.horizontal) / 10) + 200) * -1;
+        this.yPositionOffset = tempOffset * 0.65;
       }
       else {
         //top quadrant move banner down
-        this.yPositionOffset = (((mousePositionY - midPoints.horizontal) / 10) + 200) * -1
+        let tempOffset = (((mousePositionY - midPoints.horizontal) / 10) + 200) * -1;
+        this.yPositionOffset = tempOffset * 0.65;
       }
     }
 
@@ -182,8 +193,8 @@ export default {
     rgba(127, 127, 127, 0.404),
     #c7c79234
   ), url('@/assets/vue_background.jpg');
-  background-size: cover;
-  
+  background-size: 2500px 1780px;
+  opacity: 0;
   
 }
 

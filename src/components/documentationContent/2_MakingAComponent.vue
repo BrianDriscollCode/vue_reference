@@ -3,7 +3,7 @@
         <div class="pageWrapper">
             <div class="contentWrapper">
                 
-                <h1> Making a Component </h1>
+                <h1 id="makingAComponent"> Making a Component </h1>
 
                 <p> There are <u>three parts</u> of a Vue Component/Page: </p>
                 <ol>
@@ -62,7 +62,7 @@
                     </vue-code-highlight>  
                 </div>
 
-            <h2> A Quick Review of Template </h2>
+            <h2 id="templateReview"> A Quick Review of Template </h2>
             <p> To add variables to your HTML, you can use text 
                 interpolation. This allows you to use mustache syntax 
                 to change text output. </p>
@@ -114,7 +114,7 @@
                     </vue-code-highlight>  
             </div>
         
-            <h2> The Script Area </h2>
+            <h2 id="scriptArea"> The Script Area </h2>
 
             There are many important functions of the script area. To name a few: 
 
@@ -172,7 +172,7 @@
                             </pre> </code>
                     </vue-code-highlight>  
                 </div>
-                <h2> The Style Area </h2>
+                <h2 id="styleArea"> The Style Area </h2>
 
                 <p> To target specific elements in your template you can add classes or even call the elements themselves.
                     In both cases, the CSS only affects HTML tags in this template/file.  </p>
@@ -216,11 +216,10 @@
             <div class="articleNavigation">
                 <h3> In this Article </h3> 
                 <div class="articleNavigationWrapper">
-                    <p> Making a Component </p>
-                    <p> What is Vue </p>
-                    <p> Downloading Vue </p>
-                    <p> Resources for Learning </p>
-                    <p> Common Front-End Features </p>
+                    <a class="innerLink" href="/documentation/making-a-component#makingAComponent"> Making a Component </a>
+                    <a class="innerLink" href="/documentation/making-a-component#templateReview"> A Quick Review of Template </a>
+                    <a class="innerLink" href="/documentation/making-a-component#scriptArea"> The Script Area  </a>
+                    <a class="innerLink" href="/documentation/making-a-component#styleArea"> The Style Area </a>
                 </div>
             </div>
         </div>
@@ -280,10 +279,16 @@ h1 {
     margin-top: 0;
 }
 
+.innerLink {
+    margin-bottom: 0.625em;
+}
+
 .articleNavigationWrapper {
     border-left: 1px solid black;
     padding: 2px 2px 2px 6px;
-    font-size: 0.825em
+    font-size: 0.825em;
+    display: flex;
+    flex-direction: column;
 }
 
 </style>

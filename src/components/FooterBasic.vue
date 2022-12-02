@@ -5,7 +5,6 @@
     
     <div class="footerContentContainer">
         <div class="footerLinks">
-        <p> <router-link to="/about" class="footerLinkRouter"> About </router-link> </p>
         <p> <router-link to="/documentation" class="footerLinkRouter"> Documentation </router-link> </p>
         <p> <router-link to="/contact" class="footerLinkRouter"> Contact us </router-link> </p>
         </div>

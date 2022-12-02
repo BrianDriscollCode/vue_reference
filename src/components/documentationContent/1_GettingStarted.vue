@@ -2,18 +2,18 @@
     <section class="gettingStartedDocumentation">
         <div class="pageWrapper">
             <div class="contentWrapper">
-                <h1> Getting Started </h1>
+                <h1 id="gettingStarted"> Getting Started </h1>
                 <p> You can utilize basic html and JavaScript or Webpack/Vite to utilize Vue. In this section we will
                     focus on using npm, the Vue CLI, and webpack to spin up the Vue framework.
                 </p>
 
-                <h2> What is Vue? </h2>
+                <h2 id="whatIsVue"> What is Vue? </h2>
                 <p> Vue is a JavaScript framework used for creating user interfaces. It allows you to break
                     down your application into much smaller components. This allows for more seperation of
                     concerns and an intuitive way to structure an application.
                 </p>
 
-                <h2> Downloading Vue </h2>
+                <h2 id="downloadingVue"> Downloading Vue </h2>
                 <p> To continue, you will need: </p>
                 <ul>
                     <li> Node.js: <a href="https://nodejs.org/en/download/"> https://nodejs.org/en/download/ </a> </li>
@@ -51,7 +51,7 @@
                     </vue-code-highlight>
                 </div>
 
-                <h2> Resources for Learning </h2>
+                <h2 id="resources"> Resources for Learning </h2>
                 <p> There are many resources to learn Vue from due to its large community! </p>
                 <ul> 
                     <li> <a href="https://vuejs.org/guide/introduction.html"> Main Vue Documentation </a> </li>
@@ -60,7 +60,7 @@
                     
                 </ul>
 
-                <h2> Common Front-End Features </h2>
+                <h2 id="commonFrontEndFeatures"> Common Front-End Features </h2>
                 <p> Why should you use Vue!? Vue is another Frontend Framework like
                     React, Angular, and Svelte. All frameworks have their own unique system
                     and way of doing things... Vue is no different. It has been described
@@ -104,7 +104,7 @@
                     </vue-code-highlight>  
                 </div>
 
-                <h2> Quick Look at a Vue App's Structure </h2>
+                <h2 id="vueAppStructure"> Quick Look at a Vue App's Structure </h2>
                 <img :src="photo" />
                 <p> The highlighted components represent three important parts of a Vue Application: </p>
                 <ul>
@@ -193,11 +193,12 @@ body {
             <div class="articleNavigation">
                 <h3> In this Article </h3> 
                 <div class="articleNavigationWrapper">
-                    <p> Making a Component </p>
-                    <p> What is Vue </p>
-                    <p> Downloading Vue </p>
-                    <p> Resources for Learning </p>
-                    <p> Common Front-End Features </p>
+                    <a class="innerLink" href="/documentation/getting-started#gettingStarted"> Getting Started </a>
+                    <a class="innerLink" href="/documentation/getting-started#whatIsVue"> What is Vue? </a>
+                    <a class="innerLink" href="/documentation/getting-started#downloadingVue"> Downloading Vue  </a>
+                    <a class="innerLink" href="/documentation/getting-started#resources"> Resources for Learning </a>
+                    <a class="innerLink" href="/documentation/getting-started#commonFrontEndFeatures"> Common Front-End Features </a>
+                    <a class="innerLink" href="/documentation/getting-started#vueAppStructure"> Quick Look at a Vue App's Structure </a>
                 </div>
             </div>
         </div>
@@ -263,10 +264,16 @@ h1 {
     margin-top: 0;
 }
 
+.innerLink {
+    margin-bottom: 0.625em;
+}
+
 .articleNavigationWrapper {
     border-left: 1px solid black;
     padding: 2px 2px 2px 6px;
-    font-size: 0.825em
+    font-size: 0.825em;
+    display: flex;
+    flex-direction: column;
 }
 
 </style>

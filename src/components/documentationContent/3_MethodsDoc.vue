@@ -2,7 +2,7 @@
     <section class="gettingStartedDocumentation">
         <div class="pageWrapper">
             <div class="contentWrapper">
-                <h1> Methods </h1>
+                <h1 id="methods"> Methods </h1>
                 <p> You can utilize basic html and JavaScript or Webpack/Vite to utilize Vue. In this section we will
                     focus on using npm and webpack to spin up the Vue framework.
                 </p>
@@ -148,10 +148,16 @@ h1 {
     margin-top: 0;
 }
 
+.router-link {
+    margin-bottom: 0.625em;
+}
+
 .articleNavigationWrapper {
     border-left: 1px solid black;
     padding: 2px 2px 2px 6px;
-    font-size: 0.825em
+    font-size: 0.825em;
+    display: flex;
+    flex-direction: column;
 }
 
 </style>

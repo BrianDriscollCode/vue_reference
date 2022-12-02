@@ -9,7 +9,7 @@
         @mouseout="resizePreviewImage('article1', '640px 360px', false)"
 
       >
-        <router-link to="/documentation/components/banner" class="routerLinkContent">
+        <router-link to="/documentation/components/banner#bannerComponent" class="routerLinkContent">
         <div class="bannerImage article1Image" id="article1Image"> 
           <div class="opaqueBackground">
             <p class="imageText"> Banners </p>
@@ -31,7 +31,7 @@
           @mousemove="resizePreviewImage('article2', '960px 540px', true)"
           @mouseout="resizePreviewImage('article2', '640px 360px', false)"
         >
-          <router-link to="/documentation/making-a-component" class="routerLinkContent">
+          <router-link to="/documentation/making-a-component#makingAComponent" class="routerLinkContent">
           <div class="bannerImage article2Image" id="article2Image"> 
             <div class="opaqueBackground">
               <p class="imageText"> Components </p>
@@ -51,7 +51,7 @@
         @mousemove="resizePreviewImage('article3', '960px 540px', true)"
         @mouseout="resizePreviewImage('article3', '640px 360px', false)"
       >
-        <router-link to="/documentation/getting-started" class="routerLinkContent">
+        <router-link to="/documentation/getting-started#gettingStarted" class="routerLinkContent">
         <div class="bannerImage article3Image" id="article3Image"> 
           <div class="opaqueBackground">
             <p class="imageText"> Get Started </p>

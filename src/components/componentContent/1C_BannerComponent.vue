@@ -2,10 +2,10 @@
     <section class="gettingStartedDocumentation">
         <div class="pageWrapper">
             <div class="contentWrapper">
-                <h1> Banner Component </h1>
+                <h1 id="bannerComponent"> Banner Component </h1>
                 <p> You will see several examples of banners with code, examples, and explanations.</p> 
 
-                <h2>Background Image Banner </h2>
+                <h2 id="imageBanner">Background Image Banner </h2>
 
                 <p> *Note: I found it much easier whether in Vue or React that getting the
                     background image from css styles is much easier than doing it inline. No worries
@@ -64,7 +64,7 @@ export default {
                     </code>
                 </vue-code-highlight>
 
-                <h2> Hover Effect Banner </h2>
+                <h2 id="hoverBanner"> Hover Effect Banner </h2>
                 <Banner2 />
                 <p> Some things to notice: </p>
                 <ul>
@@ -148,7 +148,7 @@ export default {
                 </vue-code-highlight>
 
                 <div class="bannerExplanationContent">
-                    <h2> How to Create a Simple Banner in Vue </h2>
+                    <h2 id="simpleBanner"> How to Create a Simple Banner in Vue </h2>
                     <p> A banner usually has 3 parts: (1) Title (2) Subtitle (3) Background </p>
                     <p> I recommend <strong>wrapping the content inside of your banner for 
                         more control over the position.</strong> You will notice that I did 
@@ -161,11 +161,10 @@ export default {
             <div class="articleNavigation">
                 <h3> In this Article </h3> 
                 <div class="articleNavigationWrapper">
-                    <p> Making a Component </p>
-                    <p> What is Vue </p>
-                    <p> Downloading Vue </p>
-                    <p> Resources for Learning </p>
-                    <p> Common Front-End Features </p>
+                    <a class="innerLink" href="/documentation/components/banner#bannerComponent"> Banner Component </a>
+                    <a class="innerLink" href="/documentation/components/banner#imageBanner"> Background Image Banner </a>
+                    <a class="innerLink" href="/documentation/components/banner#hoverBanner"> Hover Effect Banner </a>
+                    <a class="innerLink" href="/documentation/components/banner#simpleBanner"> Create a Simple Banner </a>
                 </div>
             </div>
         </div>
@@ -233,10 +232,16 @@ h1 {
     margin-top: 0;
 }
 
+.innerLink {
+    margin-bottom: 0.625em;
+}
+
 .articleNavigationWrapper {
     border-left: 1px solid black;
     padding: 2px 2px 2px 6px;
-    font-size: 0.825em
+    font-size: 0.825em;
+    display: flex;
+    flex-direction: column;
 }
 
 </style>
