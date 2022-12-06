@@ -231,7 +231,7 @@ import VueCodeHighlight from "vue-code-highlight/src/CodeHighlight.vue";
 import "vue-code-highlight/themes/duotone-sea.css";
 
 export default {
-    name: "GettingStarted",
+    name: "MakingAComponent",
     components: {
         VueCodeHighlight,
     }

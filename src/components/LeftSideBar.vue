@@ -33,13 +33,13 @@
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
-                        <router-link to="/documentation/methods" class="routerLinkText"> <del> Methods </del></router-link>
+                        <router-link to="/documentation/computed-properties" class="routerLinkText"> Computed Properties </router-link>
                     </div>
                     <div class="itemContainer">
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
-                        <router-link to="/documentation/methods" class="routerLinkText"> <del> Routing </del> </router-link>
+                        <router-link to="/documentation/basic-routing" class="routerLinkText"> Basic Routing </router-link>
                     </div>
                     <div class="itemContainer">
                         <div class="iconContainer">

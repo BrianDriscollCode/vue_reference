@@ -8,9 +8,10 @@
         </div>
         <GettingStarted v-if="this.page === 'getting-started'"/>
         <MakingAComponent v-if="this.page === 'making-a-component'"/>
-        <MethodsDoc v-if="this.page === 'methods'"/>
+        <ComputedProperties v-if="this.page === 'computed-properties'"/>
         <IntroductionDoc v-if="this.page === 'introduction'"/>
-        
+        <BasicRouting v-if="this.page === 'basic-routing'" /> 
+
         <!--  Component examples "as components" @/components/componentContent -->
         <BannerComponent v-if="this.page === 'banner'"/>
         <ArticlePreviewComponent v-if="this.page === 'article-preview'"/>
@@ -27,9 +28,12 @@ import FooterBasic from "@/components/FooterBasic"
 import IntroductionDoc from "@/components/documentationContent/1_A_Introduction"
 import GettingStarted from "@/components/documentationContent/1_GettingStarted"
 import MakingAComponent from "@/components/documentationContent/2_MakingAComponent"
-import MethodsDoc from "@/components/documentationContent/3_MethodsDoc"
+import ComputedProperties from "@/components/documentationContent/3_ComputedProperties"
+import BasicRouting from "@/components/documentationContent/4_BasicRouting.vue";
+
 import BannerComponent from "@/components/componentContent/1C_BannerComponent"
 import ArticlePreviewComponent from "@/components/componentContent/2C_ArticlePreviewComponent"
+
 
 export default {
     name: "DocumentationView",
@@ -40,7 +44,8 @@ export default {
         IntroductionDoc,
         GettingStarted,
         MakingAComponent,
-        MethodsDoc,
+        ComputedProperties,
+        BasicRouting,
         // Component Documentation
         BannerComponent,
         ArticlePreviewComponent

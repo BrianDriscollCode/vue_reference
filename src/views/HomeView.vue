@@ -21,8 +21,8 @@
     </div>  
   </div>
 
-<!-- Really bad hack atm. First used to measure mouse. Then realized banner does not
-update without. This is an isolated issue, will debug if becomes necessary. -->
+<!-- Really bad hacking together at the moment. First used to measure mouse. Then realized 
+banner does not update without. This is an isolated issue, will debug if becomes necessary. -->
   <p style="display: none"> {{ passingMousePosition.x  }} - x position </p> 
   <p style="display: none"> {{ passingMousePosition.y  }} - y position </p>
 
