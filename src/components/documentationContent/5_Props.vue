@@ -2,7 +2,7 @@
     <section class="gettingStartedDocumentation">
         <div class="pageWrapper">
             <div class="contentWrapper"> 
-                <h1 id="BasicRouting"> Props </h1>
+                <h1 id="Props"> Props </h1>
 
                 <p> If you are from the React world, you will be very familiar with props. Vue offers 
                     similar functionality with their prop system.  </p>
@@ -59,7 +59,7 @@ export default {
 
                 <!-- ***STEP 1 -->
 
-                <h2 id="CreateTheRouter"> Passing Data as Props </h2>
+                <h2 id="PassingDataAsProps"> Passing Data as Props </h2>
                 <p> You can pass any datatype as a prop. Of course, depending on the data-type and whether we
                     are passing something static or dynamic, there different things we will have to do.
                 </p>
@@ -139,8 +139,8 @@ export default {
                     </vue-code-highlight>  
                 </div>
                 
-                <h2> One-Way Data Flow </h2> 
-                <p>On the main Vue documentation, it will explain that data only flows one day, from parent to child. 
+                <h2 id="OneWayDataFlow" > One-Way Data Flow </h2> 
+                <p>On the main Vue documentation, it will explain that data only flows one way, from parent to child. 
                     It is created this way because it makes it simple to understand the data flow and you lower the 
                     risk of mutating data.  </p>
 
@@ -158,14 +158,9 @@ export default {
         <div class="articleNavigation">
             <h3> In this Article </h3> 
             <div class="articleNavigationWrapper">
-                <a class="innerLink" href="/documentation/basic-routing#BasicRouting"> Basic Routing </a>
-                <a class="innerLink" href="/documentation/basic-routing#CreateTheRouter"> Create the Router </a>
-                <a class="innerLink" href="/documentation/basic-routing#InstantiateRouter"> Instantiate the Router  </a>
-                <a class="innerLink" href="/documentation/basic-routing#DeclareRoutes"> Declare Routes in Component </a>
-                <a class="innerLink" href="/documentation/basic-routing#NestingComponents"> Nesting Components</a>
-                <a class="innerLink" href="/documentation/basic-routing#SendData"> Send Data With a Route </a>
-                <a class="innerLink" href="/documentation/basic-routing#IncludeSecondComponent"> Include Second Component </a>
-                <a class="innerLink" href="/documentation/basic-routing#CreatingChildren"> Creating Children Components </a>
+                <a class="innerLink" href="/documentation/props#Props"> Props </a>
+                <a class="innerLink" href="/documentation/props#PassingDataAsProps"> Passing Data as Props </a>
+                <a class="innerLink" href="/documentation/props#OneWayDataFlow"> OneWayDataFlow  </a>
             </div>
         </div>
     </section>

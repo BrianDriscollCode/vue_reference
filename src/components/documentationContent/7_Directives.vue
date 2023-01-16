@@ -2,7 +2,7 @@
     <section class="gettingStartedDocumentation">
         <div class="pageWrapper">
             <div class="contentWrapper"> 
-                <h1 id="BasicRouting"> Directives </h1>
+                <h1 id="Directives"> Directives </h1>
 
                 <p> Vue has an official library for routing web pages. To install this library: </p>
 

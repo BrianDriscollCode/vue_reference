@@ -63,6 +63,12 @@
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
+                        <router-link to="/documentation/event-handling" class="routerLinkText"> Event Handling </router-link>
+                    </div>
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
                         <router-link to="/documentation/conditional-rendering" class="routerLinkText"> <del> Conditional Rendering </del></router-link>
                     </div>
                     <div class="itemContainer">
