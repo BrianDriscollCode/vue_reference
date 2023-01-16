@@ -137,7 +137,7 @@
     //On click calls function from 'method' area in script
     &lt;p @click="logToConsole()" &gt;Click Me&lt;/p&gt;
 
-    //Instatiated from 'components' in the script area
+    //Instantiated from 'components' in the script area
     &lt;ComponentName1/&gt; 
     //passes prop 'details'
     &lt;ComponentName2 details="Great Worker" /&gt;

@@ -8,7 +8,7 @@
 
             <div class="navigationLinks">
                 <router-link class="router-link" to="/"> Home </router-link>
-                <router-link class="docs-link router-link" to="/documentation"> <span id="docsButton"> Documentation </span> </router-link>
+                <router-link class="docs-link router-link" to="/documentation/introduction"> <span id="docsButton"> Documentation </span> </router-link>
             </div>
         </div>
     </div>

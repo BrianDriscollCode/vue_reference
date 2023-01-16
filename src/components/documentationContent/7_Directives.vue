@@ -2,7 +2,7 @@
     <section class="gettingStartedDocumentation">
         <div class="pageWrapper">
             <div class="contentWrapper"> 
-                <h1 id="BasicRouting"> Basic Routing {{ Joe }}</h1>
+                <h1 id="BasicRouting"> Directives </h1>
 
                 <p> Vue has an official library for routing web pages. To install this library: </p>
 
@@ -321,15 +321,9 @@ import VueCodeHighlight from "vue-code-highlight/src/CodeHighlight.vue";
 import "vue-code-highlight/themes/duotone-sea.css";
 
 export default {
-    name: "BasicRouting",
+    name: "DirectivesDoc",
     components: {
         VueCodeHighlight,
-    },
-    data() {
-        return {
-            a: 10,
-            b: 9,
-        } 
     },
     props: {
         Joe: String
