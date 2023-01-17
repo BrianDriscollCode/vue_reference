@@ -148,4 +148,10 @@ nav a.router-link-exact-active {
 .TopBar h2 {
   margin: 0;
 }
+
+@media only screen and (max-width: 930px) {
+    .SecondaryNavigationElement {
+        display: none;
+    }
+}
 </style>

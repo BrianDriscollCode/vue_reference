@@ -185,4 +185,16 @@ h1 {
     margin: 2em 0 2em 0;
 }
 
+@media only screen and (max-width: 1040px) {
+    .articleNavigation {
+        display: none;
+    }
+    .pageWrapper {
+        width: 95%;
+    }
+    .contentWrapper {
+        width: 100%;
+    }
+}
+
 </style>

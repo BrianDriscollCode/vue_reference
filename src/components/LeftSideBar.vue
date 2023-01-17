@@ -183,4 +183,16 @@ export default {
     text-decoration: none;
 }
 
+@media only screen and (max-width: 1040px) {
+    .LeftSideBar {
+        width: 175px;
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    .LeftSideBar {
+        display: none;
+    }
+}
+
 </style>
