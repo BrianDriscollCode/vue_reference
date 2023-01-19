@@ -75,6 +75,46 @@
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
+                        <router-link to="/documentation/slots" class="routerLinkText"> <del> Slots </del></router-link>
+                    </div>
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/emitted-events" class="routerLinkText"> <del> Emitted Events </del></router-link>
+                    </div>
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/v-model" class="routerLinkText"> <del> V-Model </del></router-link>
+                    </div>
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/provide-inject" class="routerLinkText"> <del> Provide and Inject </del></router-link>
+                    </div>
+            </div>
+
+            <div class="vueComponentsWrapper">
+                <h2 class="docsSectionTitle"> Vue In-Depth </h2> 
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/attribute-inheritance" class="routerLinkText"> <del> Attribute Inheritance </del></router-link>
+                    </div>
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/async-components" class="routerLinkText"> <del> Async Components </del></router-link>
+                    </div>
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
                         <router-link to="/documentation/api-reference" class="routerLinkText"> <del> Vue's API Reference </del></router-link>
                     </div>
                     <div class="itemContainer">
@@ -96,8 +136,78 @@
                         <router-link to="/documentation/shared-state-solution" class="routerLinkText"> <del> Shared State Solution </del></router-link>
                     </div>
             </div>
+
             <div class="vueComponentsWrapper">
-                <h2 class="docsSectionTitle"> Vue Components </h2> 
+                <h2 class="docsSectionTitle"> Reusability </h2> 
+
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/components/banner" class="routerLinkText"> <del> Composables </del> </router-link>
+                    </div>
+
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/components/article-preview" class="routerLinkText"> <del> Custom Directives</del></router-link>
+                    </div>
+            </div>
+
+            <div class="vueComponentsWrapper">
+                <h2 class="docsSectionTitle"> Tooling and Pre-Built Components </h2> 
+
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/components/banner" class="routerLinkText"> <del> Composables </del> </router-link>
+                    </div>
+
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/components/article-preview" class="routerLinkText"> <del> Custom Directives</del></router-link>
+                    </div>
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/components/transition" class="routerLinkText"> <del> Transition </del> </router-link>
+                    </div>
+
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/components/transition-group" class="routerLinkText"> <del> Transition Group </del></router-link>
+                    </div>
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/components/keep-alive" class="routerLinkText"> <del> Keep Alive </del> </router-link>
+                    </div>
+
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/components/teleport" class="routerLinkText"> <del> Teleport </del></router-link>
+                    </div>
+
+                    <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/components/suspense" class="routerLinkText"> <del> Suspense </del></router-link>
+                    </div>
+            </div>
+
+            <div class="vueComponentsWrapper">
+                <h2 class="docsSectionTitle"> Component Examples </h2> 
 
                     <div class="itemContainer">
                         <div class="iconContainer">
@@ -157,7 +267,8 @@ export default {
     height: 100%;
     background-color: rgb(250, 250, 249);
     position: fixed;
-    width: 18%
+    width: 18%;
+    overflow: scroll;
 }
 
 .documentationShelf {
