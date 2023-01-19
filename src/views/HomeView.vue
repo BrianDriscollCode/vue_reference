@@ -53,8 +53,8 @@ export default {
       image: vue_image,
       xPositionOffset: 0,
       yPositionOffset: 0,
-      stateClientWidth: 1580,
-      stateClientHeight: 1020,
+      stateClientWidth: 1920,
+      stateClientHeight: 1080,
       currentBannerXPosition: 0,
       currentBannerYPosition: 0,
       futureBannerXPosition: 0,
@@ -200,7 +200,7 @@ export default {
 
 /* Background Animation */
 
-@keyframes moveBackground {
+/* @keyframes moveBackground {
 
   0% {
     background-position-x: 50%;
@@ -217,7 +217,7 @@ export default {
     background-position-y: 50%;
   }
 
-}
+} */
 
 .HomeView h1 {
   text-align: center;

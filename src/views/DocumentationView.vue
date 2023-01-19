@@ -14,6 +14,8 @@
         <PropsDoc v-if="this.page === 'props'" />
         <LifecycleDoc v-if="this.page === 'lifecycle'" />
         <DirectivesDoc v-if="this.page === 'directives'" />
+        <EventHandlingDoc v-if="this.page === 'event-handling'" />
+        
 
         <!--  Component examples "as components" @/components/componentContent -->
         <BannerComponent v-if="this.page === 'banner'"/>
@@ -36,6 +38,7 @@ import BasicRouting from "@/components/documentationContent/4_BasicRouting.vue";
 import PropsDoc from "@/components/documentationContent/5_Props.vue";
 import LifecycleDoc from "@/components/documentationContent/6_Lifecycle.vue";
 import DirectivesDoc from "@/components/documentationContent/7_Directives.vue";
+import EventHandlingDoc from "@/components/documentationContent/8_EventHandling.vue";
 
 import BannerComponent from "@/components/componentContent/1C_BannerComponent";
 import ArticlePreviewComponent from "@/components/componentContent/2C_ArticlePreviewComponent";
@@ -56,6 +59,7 @@ export default {
         PropsDoc,
         LifecycleDoc,
         DirectivesDoc,
+        EventHandlingDoc,
 
         // Component Documentation
         BannerComponent,
