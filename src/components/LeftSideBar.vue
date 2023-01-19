@@ -69,13 +69,7 @@
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
-                        <router-link to="/documentation/conditional-rendering" class="routerLinkText"> <del> Conditional Rendering </del></router-link>
-                    </div>
-                    <div class="itemContainer">
-                        <div class="iconContainer">
-                            <img src="@/assets/angle_right.png" width="24" height="24" />
-                        </div>
-                        <router-link to="/documentation/slots" class="routerLinkText"> <del> Slots </del></router-link>
+                        <router-link to="/documentation/conditional-rendering" class="routerLinkText"> Conditional Rendering </router-link>
                     </div>
                     <div class="itemContainer">
                         <div class="iconContainer">
@@ -89,16 +83,22 @@
                         </div>
                         <router-link to="/documentation/v-model" class="routerLinkText"> <del> V-Model </del></router-link>
                     </div>
+            </div>
+
+            <div class="vueComponentsWrapper">
+                <h2 class="docsSectionTitle"> Vue In-Depth </h2> 
+                <div class="itemContainer">
+                        <div class="iconContainer">
+                            <img src="@/assets/angle_right.png" width="24" height="24" />
+                        </div>
+                        <router-link to="/documentation/slots" class="routerLinkText"> <del> Slots </del></router-link>
+                    </div>
                     <div class="itemContainer">
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />
                         </div>
                         <router-link to="/documentation/provide-inject" class="routerLinkText"> <del> Provide and Inject </del></router-link>
                     </div>
-            </div>
-
-            <div class="vueComponentsWrapper">
-                <h2 class="docsSectionTitle"> Vue In-Depth </h2> 
                     <div class="itemContainer">
                         <div class="iconContainer">
                             <img src="@/assets/angle_right.png" width="24" height="24" />

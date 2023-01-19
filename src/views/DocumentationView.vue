@@ -15,6 +15,11 @@
         <LifecycleDoc v-if="this.page === 'lifecycle'" />
         <DirectivesDoc v-if="this.page === 'directives'" />
         <EventHandlingDoc v-if="this.page === 'event-handling'" />
+        <ConditionalRenderingDoc v-if="this.page === 'conditional-rendering'" />
+        <EmittedEventsDoc v-if="this.page === 'emitted-events'" />
+        <VModelDoc v-if="this.page === 'v-model'" />
+
+        
         
 
         <!--  Component examples "as components" @/components/componentContent -->
@@ -39,6 +44,10 @@ import PropsDoc from "@/components/documentationContent/5_Props.vue";
 import LifecycleDoc from "@/components/documentationContent/6_Lifecycle.vue";
 import DirectivesDoc from "@/components/documentationContent/7_Directives.vue";
 import EventHandlingDoc from "@/components/documentationContent/8_EventHandling.vue";
+import ConditionalRenderingDoc from "@/components/documentationContent/9_Conditional_Rendering.vue";
+import EmittedEventsDoc from "@/components/documentationContent/10_Emitted_Events.vue";
+import VModelDoc from "@/components/documentationContent/11_V_Model.vue";
+
 
 import BannerComponent from "@/components/componentContent/1C_BannerComponent";
 import ArticlePreviewComponent from "@/components/componentContent/2C_ArticlePreviewComponent";
@@ -60,6 +69,9 @@ export default {
         LifecycleDoc,
         DirectivesDoc,
         EventHandlingDoc,
+        ConditionalRenderingDoc,
+        EmittedEventsDoc,
+        VModelDoc,
 
         // Component Documentation
         BannerComponent,
